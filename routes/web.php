@@ -31,3 +31,4 @@ route::get("admin/members/create" , [AdminMemberController::class , "create"])->
 Route::post("admin/members/store" , [AdminMemberController::class , "store"])->middleware("auth");
 Route::get("admin/members/edit/{user:username}" , [AdminMemberController::class , "edit"])->middleware("auth");
 Route::post("admin/members/update/{user:username}" , [AdminMemberController::class , "update"])->middleware("auth");
+Route::post("admin/members/destroy/{user:username}" , [AdminMemberController::class , "destroy"])->middleware("auth");

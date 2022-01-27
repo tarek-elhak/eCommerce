@@ -107,12 +107,29 @@
                                                 >
                                                    <a  class="inline-block px-4 py-1" href="/admin/members/edit/{{$member->username}}"> Edit </a>
                                                 </button>
-                                                <button class="bg-red-400
-                                                              hover:bg-red-500 text-white
-                                                              font-semibold rounded"
-                                                >
-                                                   <a  href="{{-- TODO --}}" class="inline-block px-4 py-1">Delete</a>
-                                                </button>
+                                                <form
+                                                    x-data="{
+                                                    confirmationMessage: 'are you sure you want to delete ' ,
+                                                    username: '{{$member->username}}'
+                                                    }"
+                                                    x-ref="form"
+                                                    method="post"
+                                                    class="inline-block"
+                                                    action="/admin/members/destroy/{{$member->username}}">
+                                                    @csrf
+
+                                                    <button
+                                                        {{-- TODO : Cutomized Confimation Popup window --}}
+                                                        @click.prevent="if(confirm(confirmationMessage+username)) $refs.form.submit()"
+                                                        type="submit"
+                                                        class="bg-red-400
+                                                          hover:bg-red-500 text-white
+                                                          font-semibold rounded
+                                                          px-4 py-1"
+                                                    >
+                                                        Delete
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

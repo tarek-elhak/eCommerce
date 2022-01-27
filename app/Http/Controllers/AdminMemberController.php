@@ -68,4 +68,12 @@ class AdminMemberController extends Controller
 
         return redirect("/admin/members");
     }
+
+    public function destroy(User $user){
+
+        $user->delete();
+
+        return redirect("/admin/members");
+
+    }
 }
