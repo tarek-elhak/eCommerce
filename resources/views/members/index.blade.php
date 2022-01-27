@@ -12,6 +12,11 @@
     <script src="{{asset("js/app.js")}}" defer></script>
 </head>
 <body>
+@if(session("successMessage"))
+    <x-success-flash :message="session('successMessage')"></x-success-flash>
+@elseif(session("dangerMessage"))
+    <x-danger-flash :message="session('dangerMessage')"></x-danger-flash>
+@endif
 <main class="w-full grid grid-cols-12 gap-x-10 bg-indigo-50">
     <aside class="col-span-2 h-screen bg-indigo-900">
         <section class="border-b-px mb-6">

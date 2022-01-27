@@ -35,7 +35,7 @@ class AdminMemberController extends Controller
         $attributes["is_registered"] = 1;
         $user = User::create($attributes);
         $user->save();
-        return redirect("/admin/members");
+        return redirect("/admin/members")->with(["successMessage" => "member has been added successfully"]);
     }
 
     public function edit(User $user){
@@ -66,14 +66,13 @@ class AdminMemberController extends Controller
         $user->email = $attributes["email"];
         $user->save();
 
-        return redirect("/admin/members");
+        return redirect("/admin/members")->with(["successMessage" => "$user->username has been updated"]);
     }
 
     public function destroy(User $user){
 
         $user->delete();
-
-        return redirect("/admin/members");
+        return redirect("/admin/members")->with(["dangerMessage" => "$user->username has been deleted"]);
 
     }
 }

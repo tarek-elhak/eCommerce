@@ -13,7 +13,7 @@
 </head>
 <body>
 <main class="w-full grid grid-cols-12 gap-x-10 bg-indigo-50">
-    <aside class="col-span-2 h-screen bg-indigo-900">
+    <aside class="col-span-2 h-screen bg-indigo-900"> {{-- TODO adjust the height of the aside component--}}
         <section class="border-b-px mb-6">
             <div x-data="{show : false}">
                 <div @click="show= !show">
