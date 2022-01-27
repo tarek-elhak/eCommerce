@@ -5069,6 +5069,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .col-span-10 {
   grid-column: span 10 / span 10;
 }
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -5109,6 +5112,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.mt-20 {
+  margin-top: 5rem;
 }
 .inline-block {
   display: inline-block;
@@ -5154,6 +5160,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-96 {
   width: 24rem;
+}
+.w-2\/3 {
+  width: 66.666667%;
+}
+.w-1\/3 {
+  width: 33.333333%;
+}
+.w-2\/4 {
+  width: 50%;
 }
 .min-w-full {
   min-width: 100%;
@@ -5328,6 +5343,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
 .font-semibold {
   font-weight: 600;
 }
@@ -5484,6 +5503,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 5rem;
   }
 
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+
+  .sm\:w-1 {
+    width: 0.25rem;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
   .sm\:items-center {
     align-items: center;
   }
@@ -5518,6 +5549,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 768px) {
+
+  .md\:w-2\/4 {
+    width: 50%;
+  }
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
