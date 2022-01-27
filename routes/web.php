@@ -29,3 +29,5 @@ Route::get("admin/dashboard" , [DashboardController::class , "index"])->middlewa
 Route::get("admin/members" , [AdminMemberController::class , "index"])->middleware("auth");
 route::get("admin/members/create" , [AdminMemberController::class , "create"])->middleware("auth");
 Route::post("admin/members/store" , [AdminMemberController::class , "store"])->middleware("auth");
+Route::get("admin/members/edit/{user:username}" , [AdminMemberController::class , "edit"])->middleware("auth");
+Route::post("admin/members/update/{user:username}" , [AdminMemberController::class , "update"])->middleware("auth");
