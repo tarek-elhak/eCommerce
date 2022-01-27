@@ -23,10 +23,7 @@ class SessionController extends Controller
         $attributes["is_admin"] = true;
 
         if (Auth::attempt($attributes)){
-            /*
-             * TODO
-             * return redirect to Dashboard page
-             */
+            return redirect("/admin/dashboard");
         }else{
             return back()->with(["message" => "invalid credentials"]);
         }

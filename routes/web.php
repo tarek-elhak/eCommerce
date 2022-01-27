@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,5 +22,6 @@ Route::get('/', function () {
  * Admin Routes
 */
 
-Route::get("/admin/login" , [SessionController::class , "create"]);
+Route::get("/admin/login" , [SessionController::class , "create"])->name("login");
 Route::post("/admin/login" , [SessionController::class , "store"]);
+Route::get("admin/dashboard" , [DashboardController::class , "index"])->middleware("auth");
