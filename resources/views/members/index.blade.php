@@ -101,8 +101,18 @@
                                                 <div class="text-sm text-gray-900">{{-- TODO --}}</div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <button class="bg-indigo-800 hover:bg-indigo-900 text-white px-4 py-1 font-semibold rounded">Edit</button>
-                                                <button class="bg-red-400 hover:bg-red-500 text-white px-4 py-1 font-semibold rounded">Delete</button>
+                                                <button class="bg-indigo-800
+                                                              hover:bg-indigo-900 text-white
+                                                              font-semibold rounded"
+                                                >
+                                                   <a  class="inline-block px-4 py-1" href="/admin/members/edit/{{$member->username}}"> Edit </a>
+                                                </button>
+                                                <button class="bg-red-400
+                                                              hover:bg-red-500 text-white
+                                                              font-semibold rounded"
+                                                >
+                                                   <a  href="{{-- TODO --}}" class="inline-block px-4 py-1">Delete</a>
+                                                </button>
                                             </td>
                                         </tr>
                                     @endforeach
