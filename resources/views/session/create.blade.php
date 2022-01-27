@@ -14,7 +14,7 @@
 <body>
     <main class="flex bg-indigo-50 justify-center items-center min-h-screen">
         <form method="post" action="/admin/login"
-              class="flex flex-col w-96 bg-white p-6 drop-shadow-md rounded-lg justify-center"
+              class="flex flex-col w-96 bg-white p-6 drop-shadow-xl rounded-lg justify-center"
               autocomplete="off">
             @csrf
             <header class="mx-auto">
