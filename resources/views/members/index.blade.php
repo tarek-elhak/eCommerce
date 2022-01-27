@@ -75,37 +75,43 @@
                                 </th>
                             </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                1
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">tarek_abdelhak</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">Tarek Abdelhak Mohamed</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    <div class="text-sm text-gray-900">tarek@google.com</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <div class="text-sm text-gray-900">27 Jan 2021</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <button class="bg-indigo-800 hover:bg-indigo-900 text-white px-4 py-1 font-semibold rounded">Edit</button>
-                                    <button class="bg-red-400 hover:bg-red-500 text-white px-4 py-1 font-semibold rounded">Delete</button>
-                                </td>
-                            </tr>
-
-                            <!-- More people... -->
-                            </tbody>
+                            @if (count($members) != 0)
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    @foreach($members as $member)
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {{$member->id}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">{{$member->username}}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">{{$member->full_name}}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                <div class="text-sm text-gray-900">{{$member->email}}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                                <div class="text-sm text-gray-900">{{-- TODO --}}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                                <button class="bg-indigo-800 hover:bg-indigo-900 text-white px-4 py-1 font-semibold rounded">Edit</button>
+                                                <button class="bg-red-400 hover:bg-red-500 text-white px-4 py-1 font-semibold rounded">Delete</button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            @else
+                                <div class="flex justify-center p-6">
+                                    <h3 class="text-indigo-900 font-bold text-lg">there are no such members to be shown</h3>
+                                </div>
+                            @endif
                         </table>
                     </div>
                 </div>
