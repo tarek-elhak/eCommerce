@@ -93,35 +93,38 @@
                                                     <div class="text-sm text-gray-900">{{-- TODO --}}</div>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                    <button class="bg-indigo-800
-                                                                  hover:bg-indigo-900 text-white
-                                                                  font-semibold rounded"
-                                                    >
-                                                       <a  class="inline-block px-4 py-1" href="/admin/members/edit/{{$member->username}}"> Edit </a>
-                                                    </button>
-                                                    <form
-                                                        x-data="{
+                                                        <button class="
+                                                                        text-white
+                                                                        bg-indigo-800
+                                                                        hover:bg-indigo-900
+                                                                        font-semibold rounded"
+                                                        >
+                                                            <i class="fa fa-user-edit ml-2"></i>
+                                                            <a  class="inline-block px-4 py-1" href="/admin/members/edit/{{$member->username}}"> Edit </a>
+                                                        </button>
+                                                        <form
+                                                            x-data="{
                                                         confirmationMessage: 'are you sure you want to delete ' ,
                                                         username: '{{$member->username}}'
                                                         }"
-                                                        x-ref="form"
-                                                        method="post"
-                                                        class="inline-block"
-                                                        action="/admin/members/destroy/{{$member->username}}">
-                                                        @csrf
-
-                                                        <button
-                                                            {{-- TODO : Cutomized Confimation Popup window --}}
-                                                            @click.prevent="if(confirm(confirmationMessage+username)) $refs.form.submit()"
-                                                            type="submit"
-                                                            class="bg-red-400
-                                                              hover:bg-red-500 text-white
+                                                            x-ref="form"
+                                                            method="post"
+                                                            class="inline-block"
+                                                            action="/admin/members/destroy/{{$member->username}}">
+                                                            @csrf
+                                                            <button
+                                                                {{-- TODO : Cutomized Confimation Popup window --}}
+                                                                @click.prevent="if(confirm(confirmationMessage+username)) $refs.form.submit()"
+                                                                type="submit"
+                                                                class="bg-red-400 text-white
+                                                              hover:bg-red-500
                                                               font-semibold rounded
                                                               px-4 py-1"
-                                                        >
-                                                            Delete
-                                                        </button>
-                                                    </form>
+                                                            >
+                                                                <i class="fa fa-trash-alt text-white mr-2"></i>
+                                                                Delete
+                                                            </button>
+                                                        </form>
                                                 </td>
                                             </tr>
                                         @endforeach
