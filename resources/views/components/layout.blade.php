@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset("css/app.css")}}" />
+    <script src = "{{asset("js/main.js")}} " defer></script>
     <script src="{{asset("js/app.js")}}" defer></script>
 </head>
 <body>
