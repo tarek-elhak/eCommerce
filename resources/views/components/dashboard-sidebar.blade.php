@@ -21,12 +21,6 @@
                     <i class="fa fa-user-plus"></i>
                     <a href="/admin/members/create" class="ml-4">Add new Member</a>
                 </li>
-                <li class="font-semibold p-2 bg-indigo-50 text-indigo-900">
-                    <i class="fa fa-user-edit"></i>
-                    <a href="/admin/members/edit" class="ml-4">
-                        Edit Member
-                    </a>
-                </li>
             </ul>
         </div>
     </section>
