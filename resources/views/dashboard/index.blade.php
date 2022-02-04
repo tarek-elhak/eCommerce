@@ -15,7 +15,7 @@
                     <span class="font-semibold text-5xl text-white
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
-                        {{count($members)}}
+                        <a href="/admin/members">{{count($members)}}</a>
                     </span>
                 </div>
                 <div class="col-span-3 bg-red-400 rounded-lg drop-shadow-md h-60 relative">
