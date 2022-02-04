@@ -28,4 +28,11 @@ class SessionController extends Controller
             return back()->with(["message" => "invalid credentials"]);
         }
     }
+    public function destroy()
+    {
+        Auth::logout();
+        session()->invalidate();
+        session()->regenerateToken();
+        return redirect('/admin/login');
+    }
 }

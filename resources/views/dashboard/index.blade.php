@@ -1,6 +1,19 @@
 <x-layout>
     <x-dashboard-grid>
         <section class="col-span-10">
+            <div x-data="{show : false}" class="text-right mr-3 mt-2">
+                <button @click= "show = !show" class="
+                                inline-block bg-admin-avatar bg-cover bg-bottom
+                                w-10 h-10 rounded-full hover:border-2 hover:border-indigo-200"
+                >
+
+                </button>
+                <div x-show="show" class="relative" style="display: none">
+                    <ul class="absolute right-5 top-2 bg-indigo-200 p-4 z-20 rounded-xl drop-shadow-2xl">
+                        <li> <a href="/admin/logout">logout</a></li>
+                    </ul>
+                </div>
+            </div>
             <section class="grid grid-cols-12 gap-4 m-10 bg-gray-50 border border-gray-200 rounded-lg p-4 drop-shadow-lg">
                 <header class="col-span-12 border-b-2 pb-2 m-2 border-indigo-50 text-indigo-900 font-bold text-xl">
                     members statistics

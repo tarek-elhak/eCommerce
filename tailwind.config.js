@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./resources/views/**/*.blade.php" , "./resources/**/*.js"],
   theme: {
-    extend: {},
+    extend: {
+        backgroundImage: {
+            "admin-avatar" : "url('/storage/tarek.jpg')"
+        }
+    },
   },
   plugins: [],
 }

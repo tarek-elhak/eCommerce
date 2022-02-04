@@ -24,6 +24,7 @@ Route::get('/', function () {
 */
 
 Route::get("/admin/login" , [SessionController::class , "create"])->name("login");
+Route::get("/admin/logout" , [SessionController::class , "destroy"])->name("logout");
 Route::post("/admin/login" , [SessionController::class , "store"]);
 Route::get("admin/dashboard" , [DashboardController::class , "index"])->middleware("auth");
 Route::get("admin/members" , [AdminMemberController::class , "index"])->name("manage members")->middleware("auth");
