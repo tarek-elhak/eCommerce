@@ -1,4 +1,11 @@
 <aside class="col-span-2 bg-indigo-900 min-h-screen">
+    <section class="mt-2 mb-6">
+        <a href="/admin/dashboard"
+           class="block text-white font-semibold text-lg pl-4 hover:border-l-4 hover:border-indigo-50">
+            <i class="fa fa-home"></i>
+            Home
+        </a>
+    </section>
     <section class="border-b-px mb-6">
         <div x-data="{show : false}">
             <div @click="show= !show">
