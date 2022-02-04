@@ -1,4 +1,4 @@
-<aside class="col-span-2 h-screen bg-indigo-900">
+<aside class="col-span-2 bg-indigo-900">
     <section class="border-b-px mb-6">
         <div x-data="{show : false}">
             <div @click="show= !show">
