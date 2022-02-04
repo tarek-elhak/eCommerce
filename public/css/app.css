@@ -5227,6 +5227,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-60 {
   height: 15rem;
 }
+.h-auto {
+  height: auto;
+}
+.h-1 {
+  height: 0.25rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
