@@ -1,5 +1,5 @@
 <x-layout>
-    <main class="w-full grid grid-cols-12 gap-x-10 bg-indigo-50">
+    <x-dashboard-grid>
         <aside class="col-span-2 h-screen bg-indigo-900">
             <section class="border-b-px mb-6">
                 <div x-data="{show : false}">
@@ -33,7 +33,7 @@
                 </div>
             </section>
         </aside>
-        <section class="col-span-10">
+        <sectio class="col-span-10">
             <main class="flex justify-center items-center mt-20">
                 <form method="post" action="/admin/members/update/{{$member->username}}"
                       class="flex flex-col w-2/4  bg-white p-6 drop-shadow-xl rounded-lg justify-center"
@@ -110,6 +110,6 @@
                     </div>
                 </form>
             </main>
-        </section>
-</main>
+        </sectio>
+    </x-dashboard-grid>
 </x-layout>

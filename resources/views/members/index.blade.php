@@ -4,7 +4,7 @@
     @elseif(session("dangerMessage"))
         <x-danger-flash :message="session('dangerMessage')"></x-danger-flash>
     @endif
-    <main class="w-full grid grid-cols-12 gap-x-10 bg-indigo-50">
+    <x-dashboard-grid>
         <aside class="col-span-2 h-screen bg-indigo-900">
             <section class="border-b-px mb-6">
                 <div x-data="{show : false}">
@@ -140,5 +140,5 @@
                 </div>
             </div>
         </section>
-    </main>
+    </x-dashboard-grid>
 </x-layout>
