@@ -6,49 +6,49 @@
                     members statistics
                 </header>
 
-                <div class="col-span-3 bg-gray-100 rounded-lg drop-shadow-md h-60 relative">
-                    <h3 class="text-center text-indigo-900 text-lg font-semibold
-                               border-b-2 border-gray-200
+                <div class="col-span-3 bg-green-400 rounded-lg drop-shadow-md h-60 relative">
+                    <h3 class="text-center text-white text-lg font-semibold
+                               border-b-2 border-green-200
                                uppercase m-2">
                         total members
                     </h3>
-                    <span class="font-semibold text-5xl text-indigo-800
+                    <span class="font-semibold text-5xl text-white
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
                         {{count($members)}}
                     </span>
                 </div>
-                <div class="col-span-3 bg-gray-100 rounded-lg drop-shadow-md h-60 relative">
-                    <h3 class="text-center text-indigo-900 text-lg font-semibold
+                <div class="col-span-3 bg-red-400 rounded-lg drop-shadow-md h-60 relative">
+                    <h3 class="text-center text-white text-lg font-semibold
                                border-b-2 border-gray-200
                                uppercase m-2">
                         pending members
                     </h3>
-                    <span class="font-semibold text-5xl text-indigo-800
+                    <span class="font-semibold text-5xl text-white
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
                         100
                     </span>
                 </div>
-                <div class="col-span-3 bg-gray-100 rounded-lg drop-shadow-md">
-                    <h3 class="text-center text-indigo-900 text-lg font-semibold
+                <div class="col-span-3 bg-cyan-800 rounded-lg drop-shadow-md">
+                    <h3 class="text-center text-white text-lg font-semibold
                                border-b-2 border-gray-200
                                uppercase m-2">
                         total items
                     </h3>
-                    <span class="font-semibold text-5xl text-indigo-800
+                    <span class="font-semibold text-5xl text-white
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
                         1200
                     </span>
                 </div>
-                <div class="col-span-3 bg-gray-100 rounded-lg drop-shadow-md">
-                    <h3 class="text-center text-indigo-900 text-lg font-semibold
+                <div class="col-span-3 bg-slate-400 rounded-lg drop-shadow-md">
+                    <h3 class="text-center text-white text-lg font-semibold
                                border-b-2 border-gray-200
                                uppercase m-2">
                         total comments
                     </h3>
-                    <span class="font-semibold text-5xl text-indigo-800
+                    <span class="font-semibold text-5xl text-white
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
                         3200
