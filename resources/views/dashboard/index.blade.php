@@ -15,7 +15,7 @@
                     <span class="font-semibold text-5xl text-indigo-800
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
-                        500
+                        {{count($members)}}
                     </span>
                 </div>
                 <div class="col-span-3 bg-gray-100 rounded-lg drop-shadow-md h-60 relative">
