@@ -80,7 +80,7 @@
                                 -- TODO
                                 -- Eye Icon not working here
                             -->
-                            <i class="fa fa-eye absolute right-2 cursor-pointer"></i>
+                            <i class="fa fa-eye-slash absolute right-2 cursor-pointer"></i>
                         </div>
                         @error("password")
                         <p class="text-red-500 text-xs font-semibold">{{$message}}</p>
