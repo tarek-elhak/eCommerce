@@ -33,6 +33,7 @@ class AdminMemberController extends Controller
         $attributes["is_admin"] = 0;
         $attributes["is_trusted"] = 0;
         $attributes["is_registered"] = 1;
+        $attributes["registered_date"] = now();
         $user = User::create($attributes);
         $user->save();
         return redirect("/admin/members")->with(["successMessage" => "member has been added successfully"]);

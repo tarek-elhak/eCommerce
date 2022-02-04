@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->boolean("is_admin");
             $table->boolean("is_trusted");
             $table->boolean("is_registered");
+            $table->timestamp("registered_date")->nullable();
         });
     }
 
