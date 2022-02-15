@@ -30,9 +30,6 @@ class AdminMemberController extends Controller
             "password" => ["required" , "min:10"]
         ]);
         $attributes["password"] = bcrypt($attributes["password"]);
-        $attributes["is_admin"] = 0;
-        $attributes["is_trusted"] = 0;
-        $attributes["is_registered"] = 1;
         $attributes["registered_date"] = now();
         $user = User::create($attributes);
         $user->save();
