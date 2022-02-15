@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\DashboardController;
@@ -34,3 +35,5 @@ Route::get("admin/members/edit/{user:username}" , [AdminMemberController::class 
 Route::post("admin/members/update/{user:username}" , [AdminMemberController::class , "update"])->middleware("auth");
 Route::post("admin/members/destroy/{user:username}" , [AdminMemberController::class , "destroy"])->middleware("auth");
 Route::post("admin/members/activate/{user:username}" , [AdminMemberController::class , "activate"])->middleware("auth");
+Route::get("admin/categories/create" , [AdminCategoryController::class , "create"])->middleware("auth");
+Route::post("/admin/category/store" , [AdminCategoryController::class , "store"])->middleware("auth");
