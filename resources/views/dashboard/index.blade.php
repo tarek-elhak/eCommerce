@@ -74,18 +74,71 @@
                     latest news
                 </header>
 
-                <div class="col-span-6 bg-gray-100 rounded-lg drop-shadow-md h-60 relative">
+                <div class="col-span-6 bg-gray-100 rounded-lg drop-shadow-md">
                     <h3 class="text-center text-indigo-900 text-lg font-semibold
                                border-b-2 border-gray-200
                                uppercase m-2">
                         <i class="fa fa-users"></i>
                         latest registered users
                     </h3>
-                    <span class="font-semibold text-5xl text-indigo-800
-                                absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-                    >
-                        test
-                    </span>
+                        <ul class="m-4 text-indigo-900 space-y-2">
+                            @foreach($members->sortByDesc('registered_date')->take(5) as $member)
+                                <div x-data="{show:false}" class="odd:bg-white even:bg-slate-100 rounded-lg font-bold cursor-pointer p-2
+                                            transition ease-in-out delay-100 hover:bg-slate-500 hover:text-white hover:scale-105 hover:-translate-y-1 duration-300">
+                                    <li @click ="show = !show" class="flex justify-between items-center">
+                                        {{$member->username}}
+                                        <i class="fa fa-plus-circle"></i>
+                                    </li>
+                                    <div x-show="show" class="mt-2 flex justify-center items-center" style="display: none">
+                                        <button class="
+                                                    text-white
+                                                    text-xs
+                                                    mr-1
+                                                    bg-indigo-800
+                                                    hover:bg-indigo-900
+                                                    font-semibold rounded"
+                                        >
+                                                <a  class="inline-block px-1 py-1" href="/admin/members/edit/{{$member->username}}">
+                                                    <i class="fa fa-user-edit"></i>
+                                                    Edit
+                                                </a>
+                                        </button>
+                                        <form
+                                            x-data="{
+                                                        confirmationMessage: 'are you sure you want to delete ' ,
+                                                        username: '{{$member->username}}'
+                                                    }"
+                                            x-ref="form"
+                                            method="post"
+                                            class="mr-1 bg-red-400 text-white text-xs hover:bg-red-500
+                                                      font-semibold rounded
+                                                      px-1 py-1"
+                                            action="/admin/members/destroy/{{$member->username}}">
+                                            @csrf
+                                            <button
+                                                {{-- TODO : Cutomized Confimation Popup window --}}
+                                                @click.prevent="if(confirm(confirmationMessage+username)) $refs.form.submit()"
+                                                type="submit"
+                                            >
+                                                <i class="fa fa-trash-alt"></i>
+                                                Delete
+                                            </button>
+                                        </form>
+                                        @unless ($member->is_registered)
+                                            <form class="inline-block bg-green-500 text-white text-xs hover:bg-green-600 rounded font-semibold mr-2 px-1 py-1"
+                                                  action="/admin/members/activate/{{$member->username}}"
+                                                  method="post">
+                                                @csrf
+                                                <button type="submit">
+                                                    <i class="fa fa-check-square"></i>
+                                                    Activate
+                                                </button>
+                                            </form>
+                                        @endunless
+                                    </div>
+                                </div>
+                            @endforeach
+                        </ul>
                 </div>
                 <div class="col-span-6 bg-gray-100 rounded-lg drop-shadow-md h-60 relative">
                     <h3 class="text-center text-indigo-900 text-lg font-semibold
