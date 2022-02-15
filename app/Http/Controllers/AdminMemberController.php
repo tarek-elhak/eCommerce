@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+
 
 class AdminMemberController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
+        if($request->has("pending")){
+            return View("members.index", [
+                "members" => User::where("is_registered" , 0 )->get()
+            ]);
+        }
         return View("members.index" , [
             "members" => User::all()->except(["is_admin" => 1])
         ]);
@@ -69,6 +76,16 @@ class AdminMemberController extends Controller
 
         return redirect("/admin/members")->with(["successMessage" => "$user->username has been updated"]);
     }
+
+    // activate pending.blade.php members
+
+    public function activate (User $user):RedirectResponse
+    {
+        $user->is_registered = 1;
+        $user->save();
+        return back()->with(["successMessage" => "$user->username has beed activated successfully"]);
+    }
+
 
     public function destroy(User $user){
 

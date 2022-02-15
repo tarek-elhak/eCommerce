@@ -33,3 +33,4 @@ Route::post("admin/members/store" , [AdminMemberController::class , "store"])->m
 Route::get("admin/members/edit/{user:username}" , [AdminMemberController::class , "edit"])->name("edit member")->middleware("auth");
 Route::post("admin/members/update/{user:username}" , [AdminMemberController::class , "update"])->middleware("auth");
 Route::post("admin/members/destroy/{user:username}" , [AdminMemberController::class , "destroy"])->middleware("auth");
+Route::post("admin/members/activate/{user:username}" , [AdminMemberController::class , "activate"])->middleware("auth");

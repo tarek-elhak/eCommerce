@@ -6,7 +6,6 @@
     @endif
     <x-dashboard-grid>
         <section class="col-span-10">
-            <!-- This example requires Tailwind CSS v2.0+ -->
             <div class="flex flex-col p-10">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -92,6 +91,17 @@
                                                                 Delete
                                                             </button>
                                                         </form>
+                                                        @unless ($member->is_registered)
+                                                            <form class="inline-block bg-green-500 text-white hover:bg-green-600 rounded font-semibold mr-2 px-2 py-1"
+                                                                  action="/admin/members/activate/{{$member->username}}"
+                                                                  method="post">
+                                                                @csrf
+                                                                <button type="submit">
+                                                                    <i class="fa fa-check-square"></i>
+                                                                    Activate
+                                                                </button>
+                                                            </form>
+                                                    @endunless
                                                 </td>
                                             </tr>
                                         @endforeach
