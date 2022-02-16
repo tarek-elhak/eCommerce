@@ -2,66 +2,13 @@
     <x-dashboard-grid>
         <section class="col-span-10">
             <main class="flex justify-center items-center mt-20">
-                <form method="post" action="/admin/members/store"
-                      class="flex flex-col w-2/4  bg-white p-6 drop-shadow-xl rounded-lg justify-center"
-                      autocomplete="off">
-                    @csrf
-                    <header class="mx-auto">
-                        <h3 class="font-semibold text-lg">Add New Member</h3>
-                    </header>
-                    <hr class="mb-8"/>
-                    <div class="mb-6">
-                        <input class=" border focus:border-indigo-900 outline-0 w-full p-2 rounded"
-                               type="text"
-                               name="username"
-                               id="username"
-                               placeholder="Your User Name" />
-                        @error("username")
-                        <p class="text-red-500 text-xs font-semibold">{{$message}}</p>
-                        @enderror
-                    </div>
-                    <div class="mb-6">
-                        <input class=" border focus:border-indigo-900 outline-0 w-full p-2 rounded"
-                               type="text"
-                               name="full_name"
-                               id="full_name"
-                               placeholder="Your Full Name" />
-                        @error("full_name")
-                        <p class="text-red-500 text-xs font-semibold">{{$message}}</p>
-                        @enderror
-                    </div>
-                    <div class="mb-6">
-                        <input class=" border focus:border-indigo-900 outline-0 w-full p-2 rounded"
-                               type="text"
-                               name="email"
-                               id="email"
-                               placeholder="Your Email" />
-                        @error("email")
-                        <p class="text-red-500 text-xs font-semibold">{{$message}}</p>
-                        @enderror
-                    </div>
-                    <div class="mb-6">
-                        <div class="w-full flex relative items-center">
-                            <input class="outline-0 p-2 border focus:border-indigo-900 flex-1 rounded" type="password" name="password" id="password" placeholder="password" />
-                            <!--
-                                -- TODO
-                                -- Eye Icon not working here
-                            -->
-                            <i class="fa fa-eye-slash absolute right-2 cursor-pointer"></i>
-                        </div>
-                        @error("password")
-                        <p class="text-red-500 text-xs font-semibold">{{$message}}</p>
-                        @enderror
-                    </div>
-                    <div class="text-center mb-6">
-                        <button type="submit" class="px-8 py-2 bg-indigo-800 hover:bg-indigo-900 text-white rounded font-semibold">Add</button>
-                    </div>
-                    <div class="text-center">
-                        @if(session()->has("message"))
-                            <p class="text-red-500 text-xs font-semibold">{{session()->get("message")}}</p>
-                        @endif
-                    </div>
-                </form>
+                <x-dashboard-form action="/admin/members/store" method="post" header="Add New Member">
+                    <x-dashboard-form-input type="text" name="username" placeholder="Member Name"/>
+                    <x-dashboard-form-input type="text" name="full_name" placeholder="Member Full Name"/>
+                    <x-dashboard-form-input type="email" name="email" placeholder="Member Email"/>
+                    <x-dashboard-form-pass-input/>
+                    <x-dashboard-form-submit-input name="Add"/>
+                </x-dashboard-form>
             </main>
         </section>
     </x-dashboard-grid>
