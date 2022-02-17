@@ -42,6 +42,9 @@ class AdminCategoryController extends Controller
             "category_name" => ["required",Rule::unique("categories","category_name")->ignore($category->id)]
         ]);
         $category->category_name = $attributes["category_name"];
+        $category->visible = request()->has("visible");
+        $category->ads_allowed = request()->has("ads");
+        $category->comments_allowed = request()->has("comments");
         $category->save();
         return redirect("/admin/categories/")->with(["successMessage" => "$category->category_name has been updated successfully"]);
     }
