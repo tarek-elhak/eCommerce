@@ -46,7 +46,7 @@
                     class="space-y-4" style="display: none">
                     <li class="font-semibold p-2 {{request()->routeIs('manage members') ? 'bg-indigo-50 text-indigo-900' : 'text-white'}}">
                         <i class="fa fa-tasks"></i>
-                        <a href="/admin/members" class="ml-4 ">Manage Categories</a>
+                        <a href="/admin/categories" class="ml-4 ">Manage Categories</a>
                     </li>
                     <li class="font-semibold p-2 {{request()->routeIs('create category') ? 'bg-indigo-50 text-indigo-900' : 'text-white'}}">
                         <i class="fa fa-tag"></i>

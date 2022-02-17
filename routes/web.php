@@ -37,3 +37,4 @@ Route::post("admin/members/destroy/{user:username}" , [AdminMemberController::cl
 Route::post("admin/members/activate/{user:username}" , [AdminMemberController::class , "activate"])->middleware("auth");
 Route::get("admin/categories/create" , [AdminCategoryController::class , "create"])->name("create category")->middleware("auth");
 Route::post("/admin/categories/store" , [AdminCategoryController::class , "store"])->middleware("auth");
+Route::get("/admin/categories" , [AdminCategoryController::class , "index"])->middleware("auth");

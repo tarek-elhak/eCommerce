@@ -9,6 +9,12 @@ use Illuminate\Validation\Rule;
 class AdminCategoryController extends Controller
 {
     //
+    public function index ()
+    {
+        return View("category.index",[
+            "categories" => Category::all()
+        ]);
+    }
     public function create()
     {
         return View("category.create");
