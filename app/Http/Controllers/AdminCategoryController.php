@@ -42,4 +42,10 @@ class AdminCategoryController extends Controller
         $category->save();
         return redirect("/admin/categories/")->with(["successMessage" => "$category->category_name has been updated successfully"]);
     }
+    public function destroy(Category $category)
+    {
+        $category->delete();
+
+        return redirect("/admin/categories/")->with(["dangerMessage" => "$category->category_name has been removed"]);
+    }
 }

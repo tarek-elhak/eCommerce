@@ -65,16 +65,16 @@
                                                 <form
                                                     x-data="{
                                                         confirmationMessage: 'are you sure you want to delete ' ,
-                                                        username: ''
+                                                        category_name: '{{$category->category_name}}'
                                                         }"
                                                     x-ref="form"
                                                     method="post"
                                                     class="inline-block"
-                                                    action="">
+                                                    action="/admin/categories/destroy/{{$category->category_name}}">
                                                     @csrf
                                                     <button
                                                         {{-- TODO : Cutomized Confimation Popup window --}}
-                                                        @click.prevent="if(confirm(confirmationMessage+username)) $refs.form.submit()"
+                                                        @click.prevent="if(confirm(confirmationMessage+category_name)) $refs.form.submit()"
                                                         type="submit"
                                                         class="bg-red-400 text-white
                                                               hover:bg-red-500

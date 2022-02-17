@@ -40,4 +40,4 @@ Route::post("/admin/categories/store" , [AdminCategoryController::class , "store
 Route::get("/admin/categories" , [AdminCategoryController::class , "index"])->middleware("auth");
 Route::get("admin/categories/edit/{category:category_name}" , [AdminCategoryController::class , "edit"])->middleware("auth");
 Route::post("admin/categories/update/{category:category_name}",[AdminCategoryController::class , "update"])->middleware("auth");
-
+Route::post("admin/categories/destroy/{category:category_name}",[AdminCategoryController::class , "destroy"])->middleware("auth");
