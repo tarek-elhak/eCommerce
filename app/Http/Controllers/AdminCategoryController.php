@@ -27,7 +27,7 @@ class AdminCategoryController extends Controller
 
         $category = Category::create($attributes);
         $category->save();
-        return redirect("admin/dashboard")->with(["message" => "category has been added successfully"]);
+        return redirect("admin/categories/")->with(["successMessage" => "$category->category_name has been added successfully"]);
     }
     public function edit(Category $category)
     {
