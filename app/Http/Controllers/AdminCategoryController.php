@@ -29,4 +29,17 @@ class AdminCategoryController extends Controller
         $category->save();
         return redirect("admin/dashboard")->with(["message" => "category has been added successfully"]);
     }
+    public function edit(Category $category)
+    {
+        return View("category.edit" , ["category" => $category]);
+    }
+    public function update(Category $category)
+    {
+        $attributes = request()->validate([
+            "category_name" => ["required",Rule::unique("categories","category_name")->ignore($category->id)]
+        ]);
+        $category->category_name = $attributes["category_name"];
+        $category->save();
+        return redirect("/admin/categories/")->with(["successMessage" => "$category->category_name has been updated successfully"]);
+    }
 }

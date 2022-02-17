@@ -1,4 +1,9 @@
 <x-layout>
+    @if(session("successMessage"))
+        <x-success-flash :message="session('successMessage')"></x-success-flash>
+    @elseif(session("dangerMessage"))
+        <x-danger-flash :message="session('dangerMessage')"></x-danger-flash>
+    @endif
     <x-dashboard-grid>
         <section class="col-span-10">
             <div class="flex flex-col p-10">
@@ -49,13 +54,13 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <button class="
-                                                                        text-white
-                                                                        bg-indigo-800
-                                                                        hover:bg-indigo-900
-                                                                        font-semibold rounded"
+                                                                text-white
+                                                                bg-indigo-800
+                                                                hover:bg-indigo-900
+                                                                font-semibold rounded"
                                                 >
                                                     <i class="fa fa-user-edit ml-2"></i>
-                                                    <a  class="inline-block px-4 py-1" href=""> Edit </a>
+                                                    <a  class="inline-block px-4 py-1" href="/admin/categories/edit/{{$category->category_name}}"> Edit </a>
                                                 </button>
                                                 <form
                                                     x-data="{
