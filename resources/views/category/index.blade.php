@@ -20,6 +20,15 @@
                                             Name
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Visibility
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Ads
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Comments
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Creation Date
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -45,6 +54,33 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">{{$category->category_name}}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div>
+                                                    @if($category->visible)
+                                                        <span class="text-sm text-white bg-green-400 font-bold px-4 py-1 rounded-lg">on</span>
+                                                    @else
+                                                        <span class="text-sm text-white bg-rose-600 font-bold px-4 py-1 rounded-lg">off</span>
+                                                    @endif
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div>
+                                                    @if($category->ads_allowed)
+                                                        <span class="text-sm text-white bg-green-400 font-bold px-4 py-1 rounded-lg">on</span>
+                                                    @else
+                                                        <span class="text-sm text-white bg-rose-600 font-bold px-4 py-1 rounded-lg">off</span>
+                                                    @endif
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div>
+                                                    @if($category->comments_allowed)
+                                                        <span class="text-sm text-white bg-green-400 font-bold px-4 py-1 rounded-lg">on</span>
+                                                    @else
+                                                        <span class="text-sm text-white bg-rose-600 font-bold px-4 py-1 rounded-lg">off</span>
+                                                    @endif
+                                                </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">{{$category->created_at->diffForHumans()}}</div>
