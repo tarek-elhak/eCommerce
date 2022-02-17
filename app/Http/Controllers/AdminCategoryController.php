@@ -22,8 +22,11 @@ class AdminCategoryController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->validate([
-           'category_name' => ["required" , Rule::unique("categories","category_name")]
+           'category_name' => ["required" , Rule::unique("categories","category_name")],
         ]);
+        $attributes["visible"] = $request->has("visible");
+        $attributes["ads_allowed"] = $request->has("ads");
+        $attributes["comments_allowed"] = $request->has("comments");
 
         $category = Category::create($attributes);
         $category->save();
