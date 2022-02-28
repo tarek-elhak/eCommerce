@@ -1,7 +1,9 @@
 @props(["header", "action" , "method"])
 
-<form method="{{$method}}" action="{{$action}}"
-      class="flex flex-col w-2/4  bg-white p-6 drop-shadow-xl rounded-lg justify-center"
+<form
+    {{$attributes->merge(["enctype","id"])}}
+      method="{{$method}}" action="{{$action}}"
+      class="flex flex-col w-1/2 mx-auto bg-white p-16 drop-shadow-xl rounded-lg justify-center overflow-y-auto"
       autocomplete="off">
     @if($method == "post")
         @csrf

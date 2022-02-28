@@ -56,4 +56,29 @@
             </div>
         </div>
     </section>
+    <section class="border-b-px mb-6">
+        <div x-data="{show : false}">
+            <div>
+                <button @click="show = !show"
+                        class="w-full text-left text-white font-semibold text-md pl-4 hover:border-l-4 hover:border-indigo-50 flex justify-between items-center">
+                    <div>
+                        <i class="fa fa-tags"></i>
+                        Items
+                    </div>
+                    <i class="pr-4 fa fa-plus"></i>
+                </button>
+                <ul x-show="show"
+                    class="space-y-4" style="display: none">
+                    <li class="font-semibold p-2 {{request()->routeIs('manage items') ? 'bg-indigo-50 text-indigo-900' : 'text-white'}}">
+                        <i class="fa fa-tasks"></i>
+                        <a href="/admin/categories" class="ml-4 ">Manage Categories</a>
+                    </li>
+                    <li class="font-semibold p-2 {{request()->routeIs('add item') ? 'bg-indigo-50 text-indigo-900' : 'text-white'}}">
+                        <i class="fa fa-tag"></i>
+                        <a href="/admin/items/create" class="ml-4">Add New Item</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </aside>

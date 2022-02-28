@@ -5475,11 +5475,18 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
+// grab Alpine JS
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
-alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
+alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start(); // end of Alpine
+
+__webpack_require__(/*! ./eyeicon */ "./resources/js/eyeicon.js");
+
+__webpack_require__(/*! ./custom_select */ "./resources/js/custom_select.js");
+
+__webpack_require__(/*! ./input-file */ "./resources/js/input-file.js");
 
 /***/ }),
 
@@ -5511,6 +5518,401 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/country-currency-list.js":
+/*!***********************************************!*\
+  !*** ./resources/js/country-currency-list.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "country_currency_codes": () => (/* binding */ country_currency_codes)
+/* harmony export */ });
+var country_currency_codes = {
+  "AED": "AE",
+  "AFN": "AF",
+  "XCD": "AG",
+  "ALL": "AL",
+  "AMD": "AM",
+  "ANG": "AN",
+  "AOA": "AO",
+  "AQD": "AQ",
+  "ARS": "AR",
+  "AUD": "AU",
+  "AZN": "AZ",
+  "BAM": "BA",
+  "BBD": "BB",
+  "BDT": "BD",
+  "XOF": "BE",
+  "BGN": "BG",
+  "BHD": "BH",
+  "BIF": "BI",
+  "BMD": "BM",
+  "BND": "BN",
+  "BOB": "BO",
+  "BRL": "BR",
+  "BSD": "BS",
+  "NOK": "BV",
+  "BWP": "BW",
+  "BYR": "BY",
+  "BZD": "BZ",
+  "CAD": "CA",
+  "CDF": "CD",
+  "XAF": "CF",
+  "CHF": "CH",
+  "CLP": "CL",
+  "CNY": "CN",
+  "COP": "CO",
+  "CRC": "CR",
+  "CUP": "CU",
+  "CVE": "CV",
+  "CYP": "CY",
+  "CZK": "CZ",
+  "DJF": "DJ",
+  "DKK": "DK",
+  "DOP": "DO",
+  "DZD": "DZ",
+  "ECS": "EC",
+  "EEK": "EE",
+  "EGP": "EG",
+  "ETB": "ET",
+  "EUR": "FR",
+  "FJD": "FJ",
+  "FKP": "FK",
+  "GBP": "GB",
+  "GEL": "GE",
+  "GGP": "GG",
+  "GHS": "GH",
+  "GIP": "GI",
+  "GMD": "GM",
+  "GNF": "GN",
+  "GTQ": "GT",
+  "GYD": "GY",
+  "HKD": "HK",
+  "HNL": "HN",
+  "HRK": "HR",
+  "HTG": "HT",
+  "HUF": "HU",
+  "IDR": "ID",
+  "ILS": "IL",
+  "INR": "IN",
+  "IQD": "IQ",
+  "IRR": "IR",
+  "ISK": "IS",
+  "JMD": "JM",
+  "JOD": "JO",
+  "JPY": "JP",
+  "KES": "KE",
+  "KGS": "KG",
+  "KHR": "KH",
+  "KMF": "KM",
+  "KPW": "KP",
+  "KRW": "KR",
+  "KWD": "KW",
+  "KYD": "KY",
+  "KZT": "KZ",
+  "LAK": "LA",
+  "LBP": "LB",
+  "LKR": "LK",
+  "LRD": "LR",
+  "LSL": "LS",
+  "LTL": "LT",
+  "LVL": "LV",
+  "LYD": "LY",
+  "MAD": "MA",
+  "MDL": "MD",
+  "MGA": "MG",
+  "MKD": "MK",
+  "MMK": "MM",
+  "MNT": "MN",
+  "MOP": "MO",
+  "MRO": "MR",
+  "MTL": "MT",
+  "MUR": "MU",
+  "MVR": "MV",
+  "MWK": "MW",
+  "MXN": "MX",
+  "MYR": "MY",
+  "MZN": "MZ",
+  "NAD": "NA",
+  "XPF": "NC",
+  "NGN": "NG",
+  "NIO": "NI",
+  "NPR": "NP",
+  "NZD": "NZ",
+  "OMR": "OM",
+  "PAB": "PA",
+  "PEN": "PE",
+  "PGK": "PG",
+  "PHP": "PH",
+  "PKR": "PK",
+  "PLN": "PL",
+  "PYG": "PY",
+  "QAR": "QA",
+  "RON": "RO",
+  "RSD": "RS",
+  "RUB": "RU",
+  "RWF": "RW",
+  "SAR": "SA",
+  "SBD": "SB",
+  "SCR": "SC",
+  "SDG": "SD",
+  "SEK": "SE",
+  "SGD": "SG",
+  "SKK": "SK",
+  "SLL": "SL",
+  "SOS": "SO",
+  "SRD": "SR",
+  "STD": "ST",
+  "SVC": "SV",
+  "SYP": "SY",
+  "SZL": "SZ",
+  "THB": "TH",
+  "TJS": "TJ",
+  "TMT": "TM",
+  "TND": "TN",
+  "TOP": "TO",
+  "TRY": "TR",
+  "TTD": "TT",
+  "TWD": "TW",
+  "TZS": "TZ",
+  "UAH": "UA",
+  "UGX": "UG",
+  "USD": "US",
+  "UYU": "UY",
+  "UZS": "UZ",
+  "VEF": "VE",
+  "VND": "VN",
+  "VUV": "VU",
+  "YER": "YE",
+  "ZAR": "ZA",
+  "ZMK": "ZM",
+  "ZWD": "ZW"
+};
+
+/***/ }),
+
+/***/ "./resources/js/country_list.js":
+/*!**************************************!*\
+  !*** ./resources/js/country_list.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "countryList": () => (/* binding */ countryList)
+/* harmony export */ });
+var countryList = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas (the)", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia (Plurinational State of)", "Bonaire, Sint Eustatius and Saba", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory (the)", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Cayman Islands (the)", "Central African Republic (the)", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands (the)", "Colombia", "Comoros (the)", "Congo (the Democratic Republic of the)", "Congo (the)", "Cook Islands (the)", "Costa Rica", "Croatia", "Cuba", "Curaçao", "Cyprus", "Czechia", "Côte d'Ivoire", "Denmark", "Djibouti", "Dominica", "Dominican Republic (the)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Falkland Islands (the) [Malvinas]", "Faroe Islands (the)", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories (the)", "Gabon", "Gambia (the)", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (the)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea (the Democratic People's Republic of)", "Korea (the Republic of)", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic (the)", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands (the)", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia (Federated States of)", "Moldova (the Republic of)", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands (the)", "New Caledonia", "New Zealand", "Nicaragua", "Niger (the)", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands (the)", "Norway", "Oman", "Pakistan", "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines (the)", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of North Macedonia", "Romania", "Russian Federation (the)", "Rwanda", "Réunion", "Saint Barthélemy", "Saint Helena, Ascension and Tristan da Cunha", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten (Dutch part)", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Sudan", "Spain", "Sri Lanka", "Sudan (the)", "Suriname", "Svalbard and Jan Mayen", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands (the)", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates (the)", "United Kingdom of Great Britain and Northern Ireland (the)", "United States Minor Outlying Islands (the)", "United States of America (the)", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "Åland Islands"];
+
+/***/ }),
+
+/***/ "./resources/js/custom_select.js":
+/*!***************************************!*\
+  !*** ./resources/js/custom_select.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _country_currency_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./country-currency-list */ "./resources/js/country-currency-list.js");
+/* harmony import */ var _country_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./country_list */ "./resources/js/country_list.js");
+/* harmony import */ var _status_list__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./status_list */ "./resources/js/status_list.js");
+
+
+
+var currencyOptionsContainer = document.querySelector("#currency__list");
+var countryOptionsContainer = document.querySelector("#country__list");
+var statusOptionsContainer = document.querySelector("#status__list");
+var categoryOptionsContainer = document.querySelector("#category__list"); // start of currency select options
+// Toggle the List
+
+var currencySelected = document.querySelector("#currency__list + .selected");
+currencySelected.addEventListener("click", function () {
+  currencyOptionsContainer.classList.toggle("active");
+}); // place the options in the div wrapper
+
+var currencyOptionsWrapper = document.createElement("div");
+
+for (var currency_code in _country_currency_list__WEBPACK_IMPORTED_MODULE_0__.country_currency_codes) {
+  var option = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(currency_code, "\">\n    <img\n        src=\"https://flagcdn.com/16x12/").concat(_country_currency_list__WEBPACK_IMPORTED_MODULE_0__.country_currency_codes[currency_code].toLowerCase(), ".png\"\n        alt=\"").concat(currency_code, "\"\n        class=\"mr-2\"\n    />\n    <div class=\"currency__code\">").concat(currency_code, "</div>\n    <input type=\"radio\" class=\"radio\" id=\"").concat(currency_code, "\" name=\"currency\">\n</label>");
+  currencyOptionsWrapper.insertAdjacentHTML("beforeend", option);
+} // insert the options in the options container
+
+
+currencyOptionsContainer.appendChild(currencyOptionsWrapper); // get the options
+
+var currencyOptions = document.querySelectorAll("#currency__list .option");
+currencyOptions.forEach(function (option) {
+  return option.addEventListener("click", currencyOptionHandler);
+}); // handler for currency option list
+
+function currencyOptionHandler(e) {
+  currencySelected.textContent = e.currentTarget.querySelector("#currency__list .currency__code").textContent;
+  currencyOptionsContainer.classList.remove("active");
+} // end of currency select options
+
+/***************************************************************************************/
+// start of country select options
+// toggle the list
+
+
+var countrySelected = document.querySelector("#country__list + .selected");
+countrySelected.addEventListener("click", function () {
+  countryOptionsContainer.classList.toggle("active");
+});
+var countryOptionsWrapper = document.createElement("div"); // place the options in the div wrapper
+
+for (var country in _country_list__WEBPACK_IMPORTED_MODULE_1__.countryList) {
+  var _option = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "\">\n            <div class=\"country__name\">").concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "</div>\n            <input type=\"radio\" class=\"radio\" id=\"").concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "\" name=\"country_made\">\n        </label>");
+
+  countryOptionsWrapper.insertAdjacentHTML("beforeend", _option);
+} // insert the options in the options' container
+
+
+countryOptionsContainer.appendChild(countryOptionsWrapper); // get the options
+
+var countryOptions = document.querySelectorAll("#country__list .option");
+countryOptions.forEach(function (option) {
+  return option.addEventListener("click", countryOptionHandler);
+}); // handler for currency option list
+
+function countryOptionHandler(e) {
+  countrySelected.textContent = e.currentTarget.querySelector("#country__list .country__name").textContent;
+  countryOptionsContainer.classList.remove("active");
+}
+/*******************************************************************************************/
+// start status select box
+// toggle the list
+
+
+var statusSelected = document.querySelector("#status__list + .selected");
+statusSelected.addEventListener("click", function () {
+  statusOptionsContainer.classList.toggle("active");
+});
+var statusOptionsWrapper = document.createElement("div"); // place the options in the div wrapper
+
+for (var status in _status_list__WEBPACK_IMPORTED_MODULE_2__.status_list) {
+  var _option2 = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "\">\n            <div class=\"status__name\">").concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "</div>\n            <input type=\"radio\" class=\"radio\" id=\"").concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "\" name=\"item_status\">\n        </label>");
+
+  statusOptionsWrapper.insertAdjacentHTML("beforeend", _option2);
+} // insert the options in the options' container
+
+
+statusOptionsContainer.appendChild(statusOptionsWrapper); // get the options
+
+var statusOptions = document.querySelectorAll("#status__list .option");
+statusOptions.forEach(function (option) {
+  return option.addEventListener("click", statusOptionHandler);
+}); // handler for currency option list
+
+function statusOptionHandler(e) {
+  statusSelected.textContent = e.currentTarget.querySelector("#status__list .status__name").textContent;
+  statusOptionsContainer.classList.remove("active");
+}
+/**********************************************************************************************************/
+// start of category select options
+// toggle the list
+
+
+var categorySelected = document.querySelector("#category__list + .selected");
+categorySelected.addEventListener("click", function () {
+  categoryOptionsContainer.classList.toggle("active");
+});
+var categoryOptions = document.querySelectorAll("#category__list .option");
+categoryOptions.forEach(function (option) {
+  return option.addEventListener("click", categoryOptionHandler);
+}); // handler for currency option list
+
+function categoryOptionHandler(e) {
+  categorySelected.textContent = e.currentTarget.querySelector("#category__list .category__name").textContent;
+  categoryOptionsContainer.classList.remove("active");
+} // end of category select options
+
+/***/ }),
+
+/***/ "./resources/js/eyeicon.js":
+/*!*********************************!*\
+  !*** ./resources/js/eyeicon.js ***!
+  \*********************************/
+/***/ (() => {
+
+var eyeIcon = document.querySelector(".fa-eye-slash");
+
+if (eyeIcon) {
+  var passwordInput = document.querySelector("#password");
+  eyeIcon.addEventListener("click", function () {
+    if (passwordInput.type === "password" && passwordInput.value !== "") {
+      passwordInput.type = "text";
+      eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
+    } else {
+      passwordInput.type = "password";
+      eyeIcon.classList.replace("fa-eye", "fa-eye-slash");
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/input-file.js":
+/*!************************************!*\
+  !*** ./resources/js/input-file.js ***!
+  \************************************/
+/***/ (() => {
+
+var fileInput = document.querySelector("#input__item__image");
+var label = document.querySelector("#label__item__image");
+var itemForm = document.querySelector("#item__form");
+var paragraph = document.querySelector(".file__name"); // listens for changed input
+
+fileInput.addEventListener("change", function () {
+  itemForm.classList.add("file__dropped");
+  paragraph.textContent = fileInput.files.item(0).name;
+}); // listens for drag / drop
+// stop defaults
+
+["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave", "drop"].forEach(function (event) {
+  itemForm.addEventListener(event, preventDefault);
+});
+
+function preventDefault(e) {
+  e.preventDefault();
+  e.stopPropagation();
+}
+
+["dragover", "dragenter"].forEach(function (event) {
+  label.addEventListener(event, function () {
+    itemForm.classList.add("drag__over");
+  });
+});
+["dragend", "dragleave"].forEach(function (event) {
+  label.addEventListener(event, function () {
+    itemForm.classList.remove("drag__over");
+  });
+});
+label.addEventListener("drop", function (e) {
+  itemForm.classList.add("file__dropped");
+  paragraph.textContent = e.dataTransfer.files.item(0).name;
+});
+
+/***/ }),
+
+/***/ "./resources/js/status_list.js":
+/*!*************************************!*\
+  !*** ./resources/js/status_list.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "status_list": () => (/* binding */ status_list)
+/* harmony export */ });
+var status_list = ["New", "Like New", "Used"];
 
 /***/ }),
 

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
-class ItemController extends Controller
+
+class AdminItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +20,13 @@ class ItemController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Show the form for creating a new Item.
      */
     public function create()
     {
-        //
+        return View("items.create", [
+            "categories" => Category::all()
+        ]);
     }
 
     /**

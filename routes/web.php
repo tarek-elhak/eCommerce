@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminMemberController;
+use App\Http\Controllers\AdminItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,4 @@ Route::get("/admin/categories" , [AdminCategoryController::class , "index"])->mi
 Route::get("admin/categories/edit/{category:category_name}" , [AdminCategoryController::class , "edit"])->middleware("auth");
 Route::post("admin/categories/update/{category:category_name}",[AdminCategoryController::class , "update"])->middleware("auth");
 Route::post("admin/categories/destroy/{category:category_name}",[AdminCategoryController::class , "destroy"])->middleware("auth");
+Route::get("/admin/items/create", [AdminItemController::class,"create"])->middleware("auth");
