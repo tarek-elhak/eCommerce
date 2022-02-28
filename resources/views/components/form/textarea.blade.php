@@ -1,3 +1,12 @@
-@props(["placeholder"])
-<textarea class="p-2 mb-6 border border-px-gray focus:bg-indigo-50 focus:border-indigo-50" rows="4" placeholder="{{$placeholder}}">
+@props(["placeholder" , "name"])
+<div class="mb-6">
+<textarea
+    class="p-2 w-full border border-px-gray focus:bg-indigo-50 focus:border-indigo-50"
+    name="{{$name}}"
+    rows="4"
+    placeholder="{{$placeholder}}">
 </textarea>
+@error($name)
+<p class="text-red-500 text-xs font-semibold">{{$message}}</p>
+@enderror
+</div>

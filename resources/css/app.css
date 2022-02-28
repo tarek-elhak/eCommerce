@@ -76,7 +76,7 @@
 ** custom select box
 */
 .select__box{
-    width: 200px;
+    /*width: 200px;*/
     position: relative;
 
 }
@@ -142,7 +142,8 @@ form.file__dropped #label__item__image{
     display: none;
 }
 form.file__dropped #file__name__wrapper{
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 form.drag__over #label__item__image{
     background-color: #FFF;

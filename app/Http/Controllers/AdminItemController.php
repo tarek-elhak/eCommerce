@@ -28,16 +28,30 @@ class AdminItemController extends Controller
             "categories" => Category::all()
         ]);
     }
-
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * persist a new item
      */
     public function store(Request $request)
     {
-        //
+        // validate the add item form data
+        $attributes = $request->validate([
+            "name" => ["required"],
+            "description" => ["required" , "min:50"],
+            "price" => ["required" , "numeric"],
+            "currency" => ["required"],
+            "made_country" => ["required"],
+            "status" => ["required"],
+            "image" => ["required"],
+            "category" => ["required"],
+            "number_of_available_pieces" => ["required" , "integer"]
+        ]);
+        $attributes["member_id"] = auth()->id();
+        $attributes["category_id"] = $request->input("category");
+        $attributes["image"] = $request->file("image")->store("public/items");
+
+        // create a new item record
+        Item::create($attributes);
+        return redirect("/admin/dashboard")->with(["successMessage" => "Item has been added successfully"]);
     }
 
     /**

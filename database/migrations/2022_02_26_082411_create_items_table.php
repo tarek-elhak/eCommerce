@@ -23,7 +23,7 @@ class CreateItemsTable extends Migration
             $table->string("currency",3);
             $table->string("made_country");
             $table->string("image");
-            $table->unsignedSmallInteger("rating");
+            $table->unsignedSmallInteger("rating")->default(0);
             $table->string("status");
             $table->unsignedSmallInteger("number_of_available_pieces");
             $table->timestamps();

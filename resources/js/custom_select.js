@@ -20,13 +20,13 @@ const currencyOptionsWrapper = document.createElement("div");
 for (let currency_code in country_currency_codes){
     const option =
         `<label class="option bg-indigo-200 flex items-center hover:bg-indigo-400" for="${currency_code}">
-    <img
-        src="https://flagcdn.com/16x12/${country_currency_codes[currency_code].toLowerCase()}.png"
-        alt="${currency_code}"
-        class="mr-2"
-    />
-    <div class="currency__code">${currency_code}</div>
-    <input type="radio" class="radio" id="${currency_code}" name="currency">
+        <img
+            src="https://flagcdn.com/16x12/${country_currency_codes[currency_code].toLowerCase()}.png"
+            alt="${currency_code}"
+            class="mr-2"
+        />
+        <div class="currency__code">${currency_code}</div>
+        <input type="radio" class="radio" id="${currency_code}" name="currency" value="${currency_code}">
 </label>`
     currencyOptionsWrapper.insertAdjacentHTML("beforeend" , option);
 }
@@ -56,7 +56,7 @@ for (let country in countryList){
     const option =
         `<label class="option bg-indigo-200 flex items-center hover:bg-indigo-400" for="${countryList[country]}">
             <div class="country__name">${countryList[country]}</div>
-            <input type="radio" class="radio" id="${countryList[country]}" name="country_made">
+            <input type="radio" class="radio" id="${countryList[country]}" name="made_country" value="${countryList[country]}">
         </label>`
     countryOptionsWrapper.insertAdjacentHTML("beforeend" , option);
 }
@@ -86,7 +86,7 @@ for (let status in status_list){
     const option =
         `<label class="option bg-indigo-200 flex items-center hover:bg-indigo-400" for="${status_list[status]}">
             <div class="status__name">${status_list[status]}</div>
-            <input type="radio" class="radio" id="${status_list[status]}" name="item_status">
+            <input type="radio" class="radio" id="${status_list[status]}" name="status" value="${status_list[status]}">
         </label>`
     statusOptionsWrapper.insertAdjacentHTML("beforeend" , option);
 }

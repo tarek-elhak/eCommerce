@@ -5739,7 +5739,7 @@ currencySelected.addEventListener("click", function () {
 var currencyOptionsWrapper = document.createElement("div");
 
 for (var currency_code in _country_currency_list__WEBPACK_IMPORTED_MODULE_0__.country_currency_codes) {
-  var option = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(currency_code, "\">\n    <img\n        src=\"https://flagcdn.com/16x12/").concat(_country_currency_list__WEBPACK_IMPORTED_MODULE_0__.country_currency_codes[currency_code].toLowerCase(), ".png\"\n        alt=\"").concat(currency_code, "\"\n        class=\"mr-2\"\n    />\n    <div class=\"currency__code\">").concat(currency_code, "</div>\n    <input type=\"radio\" class=\"radio\" id=\"").concat(currency_code, "\" name=\"currency\">\n</label>");
+  var option = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(currency_code, "\">\n        <img\n            src=\"https://flagcdn.com/16x12/").concat(_country_currency_list__WEBPACK_IMPORTED_MODULE_0__.country_currency_codes[currency_code].toLowerCase(), ".png\"\n            alt=\"").concat(currency_code, "\"\n            class=\"mr-2\"\n        />\n        <div class=\"currency__code\">").concat(currency_code, "</div>\n        <input type=\"radio\" class=\"radio\" id=\"").concat(currency_code, "\" name=\"currency\" value=\"").concat(currency_code, "\">\n</label>");
   currencyOptionsWrapper.insertAdjacentHTML("beforeend", option);
 } // insert the options in the options container
 
@@ -5768,7 +5768,7 @@ countrySelected.addEventListener("click", function () {
 var countryOptionsWrapper = document.createElement("div"); // place the options in the div wrapper
 
 for (var country in _country_list__WEBPACK_IMPORTED_MODULE_1__.countryList) {
-  var _option = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "\">\n            <div class=\"country__name\">").concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "</div>\n            <input type=\"radio\" class=\"radio\" id=\"").concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "\" name=\"country_made\">\n        </label>");
+  var _option = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "\">\n            <div class=\"country__name\">").concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "</div>\n            <input type=\"radio\" class=\"radio\" id=\"").concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "\" name=\"made_country\" value=\"").concat(_country_list__WEBPACK_IMPORTED_MODULE_1__.countryList[country], "\">\n        </label>");
 
   countryOptionsWrapper.insertAdjacentHTML("beforeend", _option);
 } // insert the options in the options' container
@@ -5797,7 +5797,7 @@ statusSelected.addEventListener("click", function () {
 var statusOptionsWrapper = document.createElement("div"); // place the options in the div wrapper
 
 for (var status in _status_list__WEBPACK_IMPORTED_MODULE_2__.status_list) {
-  var _option2 = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "\">\n            <div class=\"status__name\">").concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "</div>\n            <input type=\"radio\" class=\"radio\" id=\"").concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "\" name=\"item_status\">\n        </label>");
+  var _option2 = "<label class=\"option bg-indigo-200 flex items-center hover:bg-indigo-400\" for=\"".concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "\">\n            <div class=\"status__name\">").concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "</div>\n            <input type=\"radio\" class=\"radio\" id=\"").concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "\" name=\"status\" value=\"").concat(_status_list__WEBPACK_IMPORTED_MODULE_2__.status_list[status], "\">\n        </label>");
 
   statusOptionsWrapper.insertAdjacentHTML("beforeend", _option2);
 } // insert the options in the options' container

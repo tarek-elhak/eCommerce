@@ -5217,6 +5217,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-8{
   margin-bottom: 2rem;
 }
+.mb-1{
+  margin-bottom: 0.25rem;
+}
 .mb-4{
   margin-bottom: 1rem;
 }
@@ -5277,6 +5280,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-10{
   width: 2.5rem;
 }
+.w-1\/3{
+  width: 33.333333%;
+}
+.w-2\/3{
+  width: 66.666667%;
+}
 .w-1\/2{
   width: 50%;
 }
@@ -5285,6 +5294,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-96{
   width: 24rem;
+}
+.w-fit{
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .min-w-full{
   min-width: 100%;
@@ -5317,6 +5331,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .items-center{
   align-items: center;
+}
+.items-baseline{
+  align-items: baseline;
 }
 .justify-center{
   justify-content: center;
@@ -5757,7 +5774,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 ** custom select box
 */
 .select__box{
-    width: 200px;
+    /*width: 200px;*/
     position: relative;
 
 }
@@ -5823,7 +5840,8 @@ form.file__dropped #label__item__image{
     display: none;
 }
 form.file__dropped #file__name__wrapper{
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 form.drag__over #label__item__image{
     background-color: #FFF;
