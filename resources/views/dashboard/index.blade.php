@@ -52,7 +52,7 @@
                     <span class="font-semibold text-5xl text-white
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
-                        1200
+                        <a href="/admin/items">{{count($items)}}</a>
                     </span>
                 </div>
                 <div class="col-span-3 bg-slate-400 rounded-lg drop-shadow-md">
