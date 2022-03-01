@@ -152,6 +152,17 @@
                                                         Delete
                                                     </button>
                                                 </form>
+                                                @unless ($item->is_approved)
+                                                    <form class="inline-block bg-green-500 text-white hover:bg-green-600 rounded font-semibold"
+                                                          action="/admin/items/approve/{{$item->name}}"
+                                                          method="post">
+                                                        @csrf
+                                                        <button type="submit" class="px-2 py-1">
+                                                            <i class="fa fa-check-square mr-1"></i>
+                                                            Approve
+                                                        </button>
+                                                    </form>
+                                                @endunless
                                             </td>
                                         </tr>
                                     @endforeach

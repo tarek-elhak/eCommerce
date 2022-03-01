@@ -48,3 +48,4 @@ Route::get("admin/items" , [AdminItemController::class , "index"])->name("manage
 Route::get("/admin/items/edit/{item:name}" , [AdminItemController::class , "edit"])->name("edit item")->middleware("auth");
 Route::post("/admin/items/update/{item:name}",[AdminItemController::class , "update"])->name("update item")->middleware("auth");
 Route::post("/admin/items/destroy/{item:name}", [AdminItemController::class, "destroy"])->name("delete item")->middleware("auth");
+Route::post("/admin/items/approve/{item:name}",[AdminItemController::class , "approve"])->name("approve item")->middleware("auth");

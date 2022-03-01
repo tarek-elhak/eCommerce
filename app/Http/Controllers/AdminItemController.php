@@ -116,4 +116,14 @@ class AdminItemController extends Controller
 
         return redirect("/admin/items")->with(["dangerMessage" => "item $item->name has been deleted successfully"]);
     }
+    /**
+     * approve item to be populated on the site
+     */
+    public function approve(Item $item)
+    {
+        $item->is_approved = true;
+        $item->save();
+
+        return redirect("/admin/items")->with(["successMessage" => "item $item->name has been approved successfully"]);
+    }
 }

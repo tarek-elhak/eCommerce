@@ -26,6 +26,7 @@ class CreateItemsTable extends Migration
             $table->unsignedSmallInteger("rating")->default(0);
             $table->string("status");
             $table->unsignedSmallInteger("number_of_available_pieces");
+            $table->boolean("is_approved")->default(false);
             $table->timestamps();
         });
     }

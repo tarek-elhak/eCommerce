@@ -92,16 +92,16 @@
                                                             </button>
                                                         </form>
                                                         @unless ($member->is_registered)
-                                                            <form class="inline-block bg-green-500 text-white hover:bg-green-600 rounded font-semibold mr-2 px-2 py-1"
+                                                            <form class="inline-block bg-green-500 text-white hover:bg-green-600 rounded font-semibold"
                                                                   action="/admin/members/activate/{{$member->username}}"
                                                                   method="post">
                                                                 @csrf
-                                                                <button type="submit">
-                                                                    <i class="fa fa-check-square"></i>
+                                                                <button type="submit" class="px-2 py-1">
+                                                                    <i class="fa fa-check-square mr-1"></i>
                                                                     Activate
                                                                 </button>
                                                             </form>
-                                                    @endunless
+                                                        @endunless
                                                 </td>
                                             </tr>
                                         @endforeach
