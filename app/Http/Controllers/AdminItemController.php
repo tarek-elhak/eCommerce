@@ -15,7 +15,7 @@ class AdminItemController extends Controller
      */
     public function index()
     {
-        return View("items.index", ["items" => Item::all()]);
+        return View("items.index", ["items" => Item::with("category","member")->get()]);
     }
 
     /**

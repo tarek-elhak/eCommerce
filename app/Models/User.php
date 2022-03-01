@@ -38,4 +38,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // user has many items
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

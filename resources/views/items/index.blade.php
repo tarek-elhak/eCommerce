@@ -34,6 +34,12 @@
                                         status
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        category
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        member
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         country made
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -61,7 +67,7 @@
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4">
-                                                <div class="flex justify-start text-sm font-medium text-gray-900 w-48 overflow-x-auto">
+                                                <div class="flex justify-start text-sm font-medium text-gray-900 w-96 overflow-x-auto">
                                                     {{$item->description}}
                                                 </div>
                                             </td>
@@ -76,10 +82,18 @@
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <div class="text-sm text-gray-900">{{$item->number_of_available_pieces}}</div>
+                                                <div class="text-sm text-gray-900 w-32">
+                                                    {{$item->number_of_available_pieces}}
+                                                </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <div class="text-sm text-gray-900">{{$item->status}}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                                <div class="text-sm text-gray-900">{{$item->category->category_name}}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                                <div class="text-sm text-gray-900">{{$item->member->username}}</div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <div class="text-sm text-gray-900">{{$item->made_country}}</div>
