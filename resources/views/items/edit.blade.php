@@ -2,7 +2,7 @@
     <x-dashboard-grid>
         <section class="col-span-10 mt-10">
             <x-form.dashboard-form method="post"
-                                   action="update"
+                                   action="/admin/items/update/{{$item->name}}"
                                    header="edit {{$item->name}}"
                                    enctype="multipart/form-data"
                                    id="item__form"
@@ -26,7 +26,7 @@
                 <x-form.input type="text" name="number_of_available_pieces" value="{{$item->number_of_available_pieces}}" placeholder="Number Of Available Pieces"/>
                 <div class="flex justify-between items-baseline">
                     <x-form.Select id="category__list" heading="{{$item->category->category_name}}" :categories="$categories" class="w-2/3"/>
-                    <x-form.submit name="Add Item"/>
+                    <x-form.submit name="Update"/>
                 </div>
             </x-form.dashboard-form>
         </section>

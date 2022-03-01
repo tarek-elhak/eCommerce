@@ -46,3 +46,4 @@ Route::get("/admin/items/create", [AdminItemController::class,"create"])->name("
 Route::post("admin/items/store" , [AdminItemController::class , "store"])->middleware("auth");
 Route::get("admin/items" , [AdminItemController::class , "index"])->name("manage items")->middleware("auth");
 Route::get("/admin/items/edit/{item:name}" , [AdminItemController::class , "edit"])->name("edit item")->middleware("auth");
+Route::post("/admin/items/update/{item:name}",[AdminItemController::class , "update"])->name("update item")->middleware("auth");

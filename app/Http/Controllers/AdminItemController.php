@@ -50,7 +50,7 @@ class AdminItemController extends Controller
 
         // create a new item record
         Item::create($attributes);
-        return redirect("/admin/dashboard")->with(["successMessage" => "Item has been added successfully"]);
+        return redirect("/admin/items")->with(["successMessage" => "Item has been added successfully"]);
     }
 
     /**
@@ -82,11 +82,25 @@ class AdminItemController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Item  $item
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Item $item)
     {
-        //
+        $attributes = $request->validate([
+            "name" => ["required"],
+            "description" => ["required" , "min:50"],
+            "price" => ["required" , "numeric"],
+            "number_of_available_pieces" => ["required" , "integer"]
+        ]);
+        $attributes["member_id"] = auth()->id();
+        $attributes["category_id"] = $request->has("category") ? $request->input("category") : $item->category->id;
+        $attributes["currency"] = $request->has("currency") ? $request->input("currency") : $item->currency;
+        $attributes["made_country"] = $request->has("made_country") ? $request->input("made_country") : $item->made_country;
+        $attributes["image"] = $request->hasFile("image") ? $request->file("image")->store("items") : $item->image;
+        $attributes["status"] = $request->has("status") ? $request->input("status") : $item->status;
+
+        $item->update($attributes);
+
+        return redirect("/admin/items")->with(["successMessage" => "Item $item->name has been updated successfully"]);
     }
 
     /**
