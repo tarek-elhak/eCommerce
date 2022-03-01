@@ -106,13 +106,16 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <button class="
-                                                                        text-white
-                                                                        bg-indigo-800
-                                                                        hover:bg-indigo-900
-                                                                        font-semibold rounded"
+                                                                text-white
+                                                                bg-indigo-800
+                                                                hover:bg-indigo-900
+                                                                font-semibold rounded"
                                                 >
-                                                    <i class="fa fa-user-edit ml-2"></i>
-                                                    <a  class="inline-block px-4 py-1" href="/admin/items/edit/{{$item->name}}"> Edit </a>
+
+                                                    <a  class="inline-block px-4 py-1" href="/admin/items/edit/{{$item->name}}">
+                                                        <i class="fa fa-user-edit mr-2"></i>
+                                                        Edit
+                                                    </a>
                                                 </button>
                                                 <form
                                                     x-data="{

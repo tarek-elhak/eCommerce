@@ -45,3 +45,4 @@ Route::post("admin/categories/destroy/{category:category_name}",[AdminCategoryCo
 Route::get("/admin/items/create", [AdminItemController::class,"create"])->name("add item")->middleware("auth");
 Route::post("admin/items/store" , [AdminItemController::class , "store"])->middleware("auth");
 Route::get("admin/items" , [AdminItemController::class , "index"])->name("manage items")->middleware("auth");
+Route::get("/admin/items/edit/{item:name}" , [AdminItemController::class , "edit"])->name("edit item")->middleware("auth");

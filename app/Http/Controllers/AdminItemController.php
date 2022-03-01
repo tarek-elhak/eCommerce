@@ -46,7 +46,7 @@ class AdminItemController extends Controller
         ]);
         $attributes["member_id"] = auth()->id();
         $attributes["category_id"] = $request->input("category");
-        $attributes["image"] = $request->file("image")->store("public/items");
+        $attributes["image"] = $request->file("image")->store("items");
 
         // create a new item record
         Item::create($attributes);
@@ -65,14 +65,16 @@ class AdminItemController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing an item
      *
      * @param  \App\Models\Item  $item
-     * @return \Illuminate\Http\Response
      */
     public function edit(Item $item)
     {
-        //
+        return View("items.edit" , [
+            "item" => $item,
+            "categories" => Category::all()
+        ]);
     }
 
     /**
