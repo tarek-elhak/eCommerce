@@ -120,7 +120,7 @@
                                                 <form
                                                     x-data="{
                                                         confirmationMessage: 'are you sure you want to delete ' ,
-                                                        username: '{{$item->name}}'
+                                                        itemName: '{{$item->name}}'
                                                         }"
                                                     x-ref="form"
                                                     method="post"
@@ -129,7 +129,7 @@
                                                     @csrf
                                                     <button
                                                         {{-- TODO : Cutomized Confimation Popup window --}}
-                                                        @click.prevent="if(confirm(confirmationMessage+username)) $refs.form.submit()"
+                                                        @click.prevent="if(confirm(confirmationMessage+itemName)) $refs.form.submit()"
                                                         type="submit"
                                                         class="bg-red-400 text-white
                                                               hover:bg-red-500
