@@ -22,6 +22,9 @@
                                         description
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        image
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         price
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -69,6 +72,15 @@
                                             <td class="px-6 py-4">
                                                 <div class="flex justify-start text-sm font-medium text-gray-900 w-96 overflow-x-auto">
                                                     {{$item->description}}
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <div class="flex justify-start text-sm font-medium text-gray-900 w-20 h-20 overflow-x-auto">
+                                                    <img
+                                                        class="block"
+                                                        src="{{asset("storage/$item->image")}}"
+                                                        alt="{{$item->name}}"
+                                                    />
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4">
