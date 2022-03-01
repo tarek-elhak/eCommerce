@@ -5384,6 +5384,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between{
   justify-content: space-between;
 }
+.justify-evenly{
+  justify-content: space-evenly;
+}
 .gap-4{
   gap: 1rem;
 }
@@ -5442,6 +5445,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-b-2{
   border-bottom-width: 2px;
 }
+.border-b-4{
+  border-bottom-width: 4px;
+}
 .border-gray-200{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -5461,6 +5467,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-green-200{
   --tw-border-opacity: 1;
   border-color: rgb(187 247 208 / var(--tw-border-opacity));
+}
+.border-indigo-200{
+  --tw-border-opacity: 1;
+  border-color: rgb(199 210 254 / var(--tw-border-opacity));
 }
 .bg-white{
   --tw-bg-opacity: 1;
