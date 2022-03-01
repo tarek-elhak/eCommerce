@@ -10,13 +10,12 @@ use App\Models\Category;
 class AdminItemController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display all items
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return View("items.index", ["items" => Item::all()]);
     }
 
     /**

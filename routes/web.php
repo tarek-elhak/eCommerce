@@ -42,5 +42,6 @@ Route::get("/admin/categories" , [AdminCategoryController::class , "index"])->mi
 Route::get("admin/categories/edit/{category:category_name}" , [AdminCategoryController::class , "edit"])->middleware("auth");
 Route::post("admin/categories/update/{category:category_name}",[AdminCategoryController::class , "update"])->middleware("auth");
 Route::post("admin/categories/destroy/{category:category_name}",[AdminCategoryController::class , "destroy"])->middleware("auth");
-Route::get("/admin/items/create", [AdminItemController::class,"create"])->middleware("auth");
+Route::get("/admin/items/create", [AdminItemController::class,"create"])->name("add item")->middleware("auth");
 Route::post("admin/items/store" , [AdminItemController::class , "store"])->middleware("auth");
+Route::get("admin/items" , [AdminItemController::class , "index"])->name("manage items")->middleware("auth");

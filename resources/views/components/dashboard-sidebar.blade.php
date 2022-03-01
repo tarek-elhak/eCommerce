@@ -71,7 +71,7 @@
                     class="space-y-4" style="display: none">
                     <li class="font-semibold p-2 {{request()->routeIs('manage items') ? 'bg-indigo-50 text-indigo-900' : 'text-white'}}">
                         <i class="fa fa-tasks"></i>
-                        <a href="/admin/categories" class="ml-4 ">Manage Categories</a>
+                        <a href="/admin/items" class="ml-4 ">Manage Items</a>
                     </li>
                     <li class="font-semibold p-2 {{request()->routeIs('add item') ? 'bg-indigo-50 text-indigo-900' : 'text-white'}}">
                         <i class="fa fa-tag"></i>
