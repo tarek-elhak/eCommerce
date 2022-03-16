@@ -54,3 +54,4 @@ Route::get("/admin/comments", [AdminCommentController::class, "index"])->name("m
 Route::get("/admin/comments/edit/{comment}",[AdminCommentController::class,"edit"])->middleware("auth");
 Route::put("/admin/comments/update/{comment}",[AdminCommentController::class,"update"])->middleware("auth");
 Route::delete("/admin/comments/destroy/{comment}",[AdminCommentController::class,"destroy"])->middleware("auth");
+Route::put("/admin/comments/approve/{comment}",[AdminCommentController::class , "approve"])->middleware("auth");

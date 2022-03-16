@@ -43,4 +43,13 @@ class AdminCommentController extends Controller
 
         return redirect("/admin/comments/")->with(["dangerMessage" => "Comment Has Been Deleted Successfully"]);
     }
+
+    public function approve(Comment $comment)
+    {
+        $comment->is_approved = 1;
+
+        $comment->save();
+
+        return redirect("/admin/comments")->with(["successMessage" => "Comment Has Been Approved Successfully"]);
+    }
 }

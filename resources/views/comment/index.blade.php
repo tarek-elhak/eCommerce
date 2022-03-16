@@ -97,6 +97,7 @@
                                                           action="/admin/comments/approve/{{$comment->id}}"
                                                           method="post">
                                                         @csrf
+                                                        @method("put")
                                                         <button type="submit" class="px-2 py-1">
                                                             <i class="fa fa-check-square mr-1"></i>
                                                             Approve
