@@ -36,4 +36,11 @@ class AdminCommentController extends Controller
         return redirect("/admin/comments")->with(["successMessage" => "Comment Has Been Updated Successfully"]);
 
     }
+
+    public function destroy(Comment $comment)
+    {
+        $comment->delete();
+
+        return redirect("/admin/comments/")->with(["dangerMessage" => "Comment Has Been Deleted Successfully"]);
+    }
 }

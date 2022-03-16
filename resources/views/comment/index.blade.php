@@ -77,6 +77,7 @@
                                                     method="post"
                                                     class="inline-block"
                                                     action="/admin/comments/destroy/{{$comment->id}}">
+                                                    @method("DELETE")
                                                     @csrf
                                                     <button
                                                         {{-- TODO : Cutomized Confimation Popup window --}}
