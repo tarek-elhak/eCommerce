@@ -25,9 +25,9 @@
                                uppercase m-2">
                         total members
                     </h3>
-                    <span class="font-semibold text-5xl text-white
-                                absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                    <span class=" font-semibold text-5xl text-white flex flex-col justify-center items-center"
                     >
+                        <i class="fa fa-users text-white text-8xl"></i>
                         <a href="/admin/members">{{count($members)}}</a>
                     </span>
                 </div>
@@ -37,9 +37,9 @@
                                uppercase m-2">
                         pending members
                     </h3>
-                    <span class="font-semibold text-5xl text-white
-                                absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                    <span class=" font-semibold text-5xl text-white flex flex-col justify-center items-center"
                     >
+                        <i class="fa fa-user-plus text-white text-8xl"></i>
                         <a href="members?pending">{{count($members->where("is_registered",0))}}</a>
                     </span>
                 </div>
@@ -49,9 +49,9 @@
                                uppercase m-2">
                         total items
                     </h3>
-                    <span class="font-semibold text-5xl text-white
-                                absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                    <span class=" font-semibold text-5xl text-white flex flex-col justify-center items-center"
                     >
+                        <i class="fa fa-shopping-cart text-white text-8xl"></i>
                         <a href="/admin/items">{{count($items)}}</a>
                     </span>
                 </div>
@@ -61,16 +61,16 @@
                                uppercase m-2">
                         total comments
                     </h3>
-                    <span class="font-semibold text-5xl text-white
-                                absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                    <span class=" font-semibold text-5xl text-white flex flex-col justify-center items-center"
                     >
+                        <i class="fa fa-comments text-white text-8xl"></i>
                         <a href="/admin/comments">{{count($comments)}}</a>
                     </span>
                 </div>
 
             </section>
             <section class="grid grid-cols-12 gap-4 m-10 bg-gray-50 border border-gray-200 rounded-lg p-4 drop-shadow-lg">
-                <header class="col-span-12 border-b-2 pb-2 m-2 border-indigo-50 text-indigo-900 font-bold text-xl">
+                <header class="col-span-12 border-b-2 pb-2 m-2 border-indigo-50 text-indigo-900 font-bold text-lg uppercase">
                     latest news
                 </header>
 
@@ -79,7 +79,7 @@
                                border-b-2 border-gray-200
                                uppercase m-2">
                         <i class="fa fa-users"></i>
-                        latest registered users
+                        latest {{min(count($members), 5)}} registered users
                     </h3>
                         <ul class="m-4 text-indigo-900 space-y-2">
                             @foreach($members->sortByDesc('registered_date')->take(5) as $member)
@@ -145,7 +145,7 @@
                                border-b-2 border-gray-200
                                uppercase m-2">
                         <i class="fa fa-list-alt"></i>
-                        latest added items
+                        latest {{min(count($items),5)}} added items
                     </h3>
                     <ul class="m-4 text-indigo-900 space-y-2">
                         @foreach($items->sortByDesc('create_at')->take(5) as $item)
@@ -214,7 +214,7 @@
 
                     >
                         <i class="fa fa-comments"></i>
-                        latest comments
+                        latest {{min(count($comments),5)}} comments
                     </h3>
                     @foreach($comments->sortByDesc("created_at")->take(5) as $comment)
                         <div class="flex mb-4">

@@ -5482,6 +5482,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start(); // end of Alpine
 
+__webpack_require__(/*! ./sidebar */ "./resources/js/sidebar.js");
+
 __webpack_require__(/*! ./eyeicon */ "./resources/js/eyeicon.js");
 
 __webpack_require__(/*! ./custom_select */ "./resources/js/custom_select.js");
@@ -5897,6 +5899,70 @@ function preventDefault(e) {
 label.addEventListener("drop", function (e) {
   itemForm.classList.add("file__dropped");
   paragraph.textContent = e.dataTransfer.files.item(0).name;
+});
+
+/***/ }),
+
+/***/ "./resources/js/sidebar.js":
+/*!*********************************!*\
+  !*** ./resources/js/sidebar.js ***!
+  \*********************************/
+/***/ (() => {
+
+/*
+    members sidebar
+*/
+var membersList = document.querySelector("#members");
+var membersIcon = document.querySelector("#members__icon");
+var membersButton = document.querySelector("#members__btn");
+membersButton.addEventListener("click", function () {
+  if (membersList.style.display !== "none") {
+    membersIcon.classList.replace("fa-minus", "fa-plus");
+  } else {
+    membersIcon.classList.replace("fa-plus", "fa-minus");
+  }
+});
+/*
+    categories sidebar
+*/
+
+var categoriesList = document.querySelector("#categories");
+var categoriesIcon = document.querySelector("#categories__icon");
+var categoriesButton = document.querySelector("#categories__btn");
+categoriesButton.addEventListener("click", function () {
+  if (categoriesList.style.display !== "none") {
+    categoriesIcon.classList.replace("fa-minus", "fa-plus");
+  } else {
+    categoriesIcon.classList.replace("fa-plus", "fa-minus");
+  }
+});
+/*
+    items sidebar
+*/
+
+var itemsList = document.querySelector("#items");
+var itemsIcon = document.querySelector("#items__icon");
+var itemsButton = document.querySelector("#items__btn");
+itemsButton.addEventListener("click", function () {
+  if (itemsList.style.display !== "none") {
+    itemsIcon.classList.replace("fa-minus", "fa-plus");
+  } else {
+    itemsIcon.classList.replace("fa-plus", "fa-minus");
+  }
+});
+/*
+    comments sidebar
+*/
+
+var commentsList = document.querySelector("#comments");
+var commentsIcon = document.querySelector("#comments__icon");
+var commentsButton = document.querySelector("#comments__btn");
+commentsButton.addEventListener("click", function () {
+  if (commentsList.style.display !== "none") {
+    commentsIcon.classList.replace("fa-minus", "fa-plus");
+  } else {
+    commentsIcon.classList.replace("fa-plus", "fa-minus");
+  }
 });
 
 /***/ }),
