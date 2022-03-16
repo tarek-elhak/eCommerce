@@ -46,8 +46,10 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap ">
-                                                <div class="text-sm text-gray-900">{{$comment->body}}</div>
+                                            <td class="px-6 py-4">
+                                                <div class="flex justify-start text-sm font-medium text-gray-900 w-72">
+                                                    {{$comment->body}}
+                                                </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 <div class="text-sm text-gray-900">{{$comment->item->name}}</div>
