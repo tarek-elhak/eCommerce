@@ -5,7 +5,7 @@
                                    action="/admin/comments/update/{{$comment->id}}"
                                    method="put"
             >
-                <x-form.textarea name="body" value="{{$comment->body}}"/>
+                <x-form.textarea name="body" value="{!! $comment->body !!}"/>
                 <x-form.checkbox-input content="Approve" name="is_approved" check="{{$comment->is_approved}}" />
                 <x-form.submit name="Update" />
             </x-form.dashboard-form>

@@ -64,7 +64,7 @@
                     <span class="font-semibold text-5xl text-white
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
-                        {{count($comments)}}
+                        <a href="/admin/comments">{{count($comments)}}</a>
                     </span>
                 </div>
 
@@ -206,6 +206,73 @@
                             </div>
                         @endforeach
                     </ul>
+                </div>
+                <div class="col-span-12 bg-gray-100 rounded-lg drop-shadow-md">
+                    <h3 class="text-center text-indigo-900 text-lg font-semibold
+                               border-b-2 border-gray-200
+                               uppercase m-2"
+
+                    >
+                        <i class="fa fa-comments"></i>
+                        latest comments
+                    </h3>
+                    @foreach($comments->sortByDesc("created_at")->take(5) as $comment)
+                        <div class="flex mb-4">
+                            <div class="w-2/4 flex mr-6 items-center">
+                                <h3 class="text-gray-700 min-w-fit w-32 mr-6 ml-2 p-2 bg-indigo-100 rounded-xl">{{$comment->member->username}}</h3>
+                                <p class="text-gray-700 flex-1 p-2 bg-rose-100 rounded-xl">{{$comment->body}}</p>
+                            </div>
+                            <div class="w-1/4 p-2 flex items-center">
+                                <span class="text-gray-700 bg-purple-200 rounded-xl p-2">{{$comment->item->name}}</span>
+                            </div>
+                            <div class="w-1/4 p-2 flex items-center">
+                                <button class="
+                                                text-white
+                                                bg-indigo-800
+                                                hover:bg-indigo-900
+                                                text-sm mr-2
+                                                font-semibold rounded"
+                                >
+                                    <a  class="inline-block px-2 py-1" href="/admin/comments/edit/{{$comment->id}}"> Edit </a>
+                                </button>
+                                <form
+                                    x-data="{
+                                            confirmationMessage: 'are you sure you want to delete ',
+                                            comment: `{{$comment->body}}`
+                                            }"
+                                    x-ref="form"
+                                    method="post"
+                                    class="inline-block mr-2"
+                                    action="/admin/comments/destroy/{{$comment->id}}">
+                                    @method("DELETE")
+                                    @csrf
+                                    <button
+                                        {{-- TODO : Cutomized Confimation Popup window --}}
+                                        @click.prevent="if(confirm(confirmationMessage+comment)) $refs.form.submit()"
+                                        type="submit"
+                                        class="bg-red-400 text-white
+                                              hover:bg-red-500
+                                              text-sm
+                                              font-semibold rounded
+                                              px-2 py-1"
+                                    >
+                                        Delete
+                                    </button>
+                                </form>
+                                @unless ($comment->is_approved)
+                                    <form class="inline-block bg-green-500 text-white hover:bg-green-600 rounded font-semibold"
+                                          action="/admin/comments/approve/{{$comment->id}}"
+                                          method="post">
+                                        @csrf
+                                        @method("put")
+                                        <button type="submit" class="px-2 py-1 text-sm font-semibold rounded">
+                                            Approve
+                                        </button>
+                                    </form>
+                                @endunless
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </section>
         </section>
