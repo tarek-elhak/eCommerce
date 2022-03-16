@@ -110,7 +110,7 @@
                                     </tbody>
                                 @else
                                     <div class="flex justify-center p-6">
-                                        <h3 class="text-indigo-900 font-bold text-lg">there are no such members to be shown</h3>
+                                        <h3 class="text-indigo-900 font-bold text-lg">there are no such comments to be shown</h3>
                                     </div>
                                 @endif
                             </table>

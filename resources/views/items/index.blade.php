@@ -163,6 +163,18 @@
                                                         </button>
                                                     </form>
                                                 @endunless
+                                                <button class="
+                                                                text-white
+                                                                bg-slate-400
+                                                                hover:bg-slate-600
+                                                                font-semibold rounded"
+                                                >
+
+                                                    <a  class="inline-block px-4 py-1" href="/admin/comments/{{$item->name}}/show">
+                                                        <i class="fa fa-comments mr-2"></i>
+                                                        Show Comments
+                                                    </a>
+                                                </button>
                                             </td>
                                         </tr>
                                     @endforeach
