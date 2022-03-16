@@ -51,3 +51,5 @@ Route::post("/admin/items/update/{item:name}",[AdminItemController::class , "upd
 Route::post("/admin/items/destroy/{item:name}", [AdminItemController::class, "destroy"])->name("delete item")->middleware("auth");
 Route::post("/admin/items/approve/{item:name}",[AdminItemController::class , "approve"])->name("approve item")->middleware("auth");
 Route::get("/admin/comments", [AdminCommentController::class, "index"])->name("manage comments")->middleware("auth");
+Route::get("/admin/comments/edit/{comment}",[AdminCommentController::class,"edit"])->middleware("auth");
+Route::put("/admin/comments/update/{comment}",[AdminCommentController::class,"update"])->middleware("auth");

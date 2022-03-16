@@ -1,4 +1,9 @@
 <x-layout>
+        @if(session("successMessage"))
+            <x-success-flash :message="session('successMessage')"></x-success-flash>
+        @elseif(session("dangerMessage"))
+            <x-danger-flash :message="session('dangerMessage')"></x-danger-flash>
+        @endif
     <x-dashboard-grid>
         <section class="col-span-10">
             <div class="flex flex-col p-10">

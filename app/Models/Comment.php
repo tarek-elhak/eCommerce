@@ -9,6 +9,8 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $guarded = ["id"];
+
     // comment belongs to an item
     public function item()
     {

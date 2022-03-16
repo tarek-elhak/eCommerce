@@ -13,4 +13,27 @@ class AdminCommentController extends Controller
     {
         return View("comment.index",["comments" => Comment::with(["member","item"])->get()]);
     }
+
+    public function edit(Comment $comment)
+    {
+        return View("comment.edit",["comment" => $comment]);
+    }
+
+    public function update(Request $request , Comment $comment)
+    {
+        // validate
+
+        $attributes = $request->validate([
+            "body" =>["required"]
+        ]);
+
+        $attributes["is_approved"] = $request->has("is_approved") ? 1 : 0;
+
+        $comment->update($attributes);
+
+        $comment->save();
+
+        return redirect("/admin/comments")->with(["successMessage" => "Comment Has Been Updated Successfully"]);
+
+    }
 }

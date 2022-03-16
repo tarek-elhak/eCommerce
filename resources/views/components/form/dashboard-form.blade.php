@@ -1,12 +1,15 @@
 @props(["header", "action" , "method"])
 
 <form
-    {{$attributes->merge(["enctype","id"])}}
-      method="{{$method}}" action="{{$action}}"
+      {{$attributes->merge(["enctype","id"])}}
+      method="{{$method != 'get' ? 'POST' : 'GET'}}" action="{{$action}}"
       class="flex flex-col w-1/2 mx-auto bg-white p-16 drop-shadow-xl rounded-lg justify-center overflow-y-auto"
       autocomplete="off">
-    @if($method == "post")
+    @if($method == "post" || $method == "put")
         @csrf
+    @endif
+    @if($method == "put")
+        @method("put")
     @endif
     <header class="mx-auto">
         <h3 class="font-semibold text-lg">{{$header}}</h3>

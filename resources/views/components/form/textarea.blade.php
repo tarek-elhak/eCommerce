@@ -1,4 +1,4 @@
-@props(["placeholder" , "name" , "value" => ""])
+@props(["placeholder" => "" , "name" , "value" => ""])
 <div class="mb-6">
 <textarea
     class="p-2 w-full border border-px-gray focus:bg-indigo-50 focus:border-indigo-50"
