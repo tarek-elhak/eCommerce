@@ -11,6 +11,6 @@ class AdminCommentController extends Controller
 
     public function index()
     {
-        return View("comment.index",["comments" => Comment::all()]);
+        return View("comment.index",["comments" => Comment::with(["member","item"])->get()]);
     }
 }

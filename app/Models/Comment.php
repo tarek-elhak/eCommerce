@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
+
+    // comment belongs to an item
+    public function item()
+    {
+        return $this->belongsTo(Item::class);
+    }
+    // belongs to a member
+    public function member()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

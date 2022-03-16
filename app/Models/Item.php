@@ -22,4 +22,10 @@ class Item extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // item has many comments
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
