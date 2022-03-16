@@ -64,7 +64,7 @@
                     <span class="font-semibold text-5xl text-white
                                 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
                     >
-                        3200
+                        {{count($comments)}}
                     </span>
                 </div>
 
