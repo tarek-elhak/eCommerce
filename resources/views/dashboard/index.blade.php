@@ -144,7 +144,7 @@
                     <h3 class="text-center text-indigo-900 text-lg font-semibold
                                border-b-2 border-gray-200
                                uppercase m-2">
-                        <i class="fa fa-tags"></i>
+                        <i class="fa fa-list-alt"></i>
                         latest added items
                     </h3>
                     <ul class="m-4 text-indigo-900 space-y-2">

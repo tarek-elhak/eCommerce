@@ -6,6 +6,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminMemberController;
 use App\Http\Controllers\AdminItemController;
+use App\Http\Controllers\AdminCommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,3 +50,4 @@ Route::get("/admin/items/edit/{item:name}" , [AdminItemController::class , "edit
 Route::post("/admin/items/update/{item:name}",[AdminItemController::class , "update"])->name("update item")->middleware("auth");
 Route::post("/admin/items/destroy/{item:name}", [AdminItemController::class, "destroy"])->name("delete item")->middleware("auth");
 Route::post("/admin/items/approve/{item:name}",[AdminItemController::class , "approve"])->name("approve item")->middleware("auth");
+Route::get("/admin/comments", [AdminCommentController::class, "index"])->name("manage comments")->middleware("auth");
