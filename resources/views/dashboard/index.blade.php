@@ -3,14 +3,28 @@
         <section class="col-span-10">
             <div x-data="{show : false}" class="text-right mr-3 mt-2">
                 <button @click= "show = !show" class="
-                                inline-block bg-admin-avatar bg-cover bg-bottom
+                                inline-block bg-admin-avatar bg-cover bg-center
                                 w-10 h-10 rounded-full hover:border-2 hover:border-indigo-200"
                 >
 
                 </button>
                 <div x-show="show" class="relative" style="display: none">
-                    <ul class="absolute right-5 top-2 bg-indigo-200 p-4 z-20 rounded-xl drop-shadow-2xl">
-                        <li> <a href="/admin/logout">logout</a></li>
+                    <ul class="absolute right-5 top-2 bg-indigo-200 z-20 rounded-xl drop-shadow-2xl text-left">
+                        <li>
+                            <a href="/admin/logout"
+                               class="block p-4 p-y-2 hover:bg-white hover:text-indigo-400 rounded-xl"
+                            >
+                                logout
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="/"
+                               class="block p-4 p-y-2 hover:bg-white hover:text-indigo-400 rounded-xl"
+                            >
+                                visit shop
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
