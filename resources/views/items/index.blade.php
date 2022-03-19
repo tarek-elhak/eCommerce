@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Manage Items">
     @if(session("successMessage"))
         <x-success-flash :message="session('successMessage')"></x-success-flash>
     @elseif(session("dangerMessage"))

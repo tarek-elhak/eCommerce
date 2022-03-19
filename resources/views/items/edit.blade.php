@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Edit Item">
     <x-dashboard-grid>
         <section class="col-span-10 mt-10">
             <x-form.dashboard-form method="post"

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Create New Category">
     <x-dashboard-grid>
         <section class="col-span-10">
             <main class="flex justify-center items-center mt-20">

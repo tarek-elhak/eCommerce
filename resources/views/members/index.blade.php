@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout class="Manage Members">
     @if(session("successMessage"))
         <x-success-flash :message="session('successMessage')"></x-success-flash>
     @elseif(session("dangerMessage"))

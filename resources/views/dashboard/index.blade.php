@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Dashboard">
     <x-dashboard-grid>
         <section class="col-span-10">
             <div x-data="{show : false}" class="text-right mr-3 mt-2">

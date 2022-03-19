@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Admin Login">
     <main class="flex bg-indigo-50 justify-center items-center min-h-screen">
         <form method="post" action="/admin/login"
               class="flex flex-col w-96 bg-white p-6 drop-shadow-xl rounded-lg justify-center"
