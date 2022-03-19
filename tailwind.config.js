@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
         backgroundImage: {
-            "admin-avatar" : "url('/storage/tarek.jpg')"
+            "admin-avatar" : "url('/storage/tarek.jpg')",
+            "logo" : "url('/storage/logo.png')"
         }
     },
   },
