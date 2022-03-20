@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->text("body");
             $table->boolean("is_approved");
-            $table->foreignId("item_id")->constrained("items")->cascadeOnUpdate()->cascadeOnUpdate();
+            $table->foreignId("item_id")->constrained("items")->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId("member_id")->constrained("users")->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
