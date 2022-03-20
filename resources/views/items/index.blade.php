@@ -65,7 +65,7 @@
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4">
-                                                <div class="flex justify-start text-sm font-medium text-gray-900 w-32">
+                                                <div class="flex justify-start text-sm font-medium text-gray-900 w-32 break-all">
                                                     {{$item->name}}
                                                 </div>
                                             </td>
