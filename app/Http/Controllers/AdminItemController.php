@@ -44,6 +44,7 @@ class AdminItemController extends Controller
             "category" => ["required"],
             "number_of_available_pieces" => ["required" , "integer"]
         ]);
+        $attributes["name"] = str_replace("/","-",$attributes["name"]);
         $attributes["member_id"] = auth()->id();
         $attributes["category_id"] = $request->input("category");
         $attributes["image"] = $request->file("image")->store("items");
@@ -91,6 +92,7 @@ class AdminItemController extends Controller
             "price" => ["required" , "numeric"],
             "number_of_available_pieces" => ["required" , "integer"]
         ]);
+        $attributes["name"] = str_replace("/","-",$attributes["name"]);
         $attributes["member_id"] = auth()->id();
         $attributes["category_id"] = $request->has("category") ? $request->input("category") : $item->category->id;
         $attributes["currency"] = $request->has("currency") ? $request->input("currency") : $item->currency;
