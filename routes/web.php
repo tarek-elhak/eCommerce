@@ -7,12 +7,13 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminMemberController;
 use App\Http\Controllers\AdminItemController;
 use App\Http\Controllers\AdminCommentController;
+use App\Http\Controllers\HomeController;
 /*
  * front-routes
  */
 
 
-Route::view("/","index", ["categories" => \App\Models\Category::all()]);
+Route::get("/",[HomeController::class,"index"]);
 
 /*
  * Admin Routes
